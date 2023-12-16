@@ -2,4 +2,12 @@
 
 {% block content %}
   {{request.user.moodle_id}}
+
+  <hr>
+
+  {% for event in events %}
+
+  <a href='{% url "reg" event.id %}'> {{event.name}} </a>
+
+  {% endfor %}
 {% endblock content %}

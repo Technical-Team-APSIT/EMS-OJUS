@@ -10,7 +10,13 @@ from .models import Event
 
 
 def index(request):
-    return render(request, 'core/index.html')
+    user = request.user
+    events = Event.objects.all()
+    context = {
+        'events' : events,
+        'user' : user,
+    }
+    return render(request, 'core/index.html', context)
 
 
 def loginUser(request):
@@ -47,7 +53,7 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def registerEvent(request, pk):
-    event = Events.objects.get(id=pk)
+    event = Event.objects.get(id=pk)
     user = request.user
     if request.method == 'POST':
         Signed.objects.create(
@@ -55,6 +61,6 @@ def registerEvent(request, pk):
             event = event,
         )
 
-    return redirect('index')
+    return HttpResponse(f'Signed up sucessfully for'+ event.name)
 
 # Create your views here.
