@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
      #user apps
     'core.apps.CoreConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -87,6 +88,10 @@ WSGI_APPLICATION = 'EMS.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+AUTH_USER_MODEL="core.User"
+
+LOGIN_URL = "login"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
