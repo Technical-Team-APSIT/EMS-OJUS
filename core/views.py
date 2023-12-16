@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login, logout , authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .models import Event
 
 
 
@@ -41,6 +42,19 @@ def loginUser(request):
 @login_required(login_url='login')
 def logoutUser(request):
     logout(request)
+    return redirect('index')
+
+
+@login_required(login_url='login')
+def registerEvent(request, pk):
+    event = Events.objects.get(id=pk)
+    user = request.user
+    if request.method == 'POST':
+        Signed.objects.create(
+            participant = user,
+            event = event,
+        )
+
     return redirect('index')
 
 # Create your views here.

@@ -22,14 +22,21 @@ class User(AbstractUser):
 
 class Event(models.Model):
     name = models.CharField(null=True)
-    desc = models.TextField()
+    desc = models.TextField(null=True)
+    rules = models.TextField(null=True)
+    venue = models.CharField(null=True)
     date = models.DateField()
     time = models.TimeField()
 
     def __str__(self):
         return str(self.name)
 
-class Regis(models.Model):
+class eventHead(models.Model):
+    name = models.CharField(null=True)
+    contact = models.IntegerField()
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+class Signed(models.Model):
     participant = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 # Create your models here.
