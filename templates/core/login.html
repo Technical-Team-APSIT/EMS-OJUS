@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+
+
+<div class="container-fluid bg-grade">
+
+    <div class="fix-top-left"> <a href="{{ request.META.HTTP_REFERER }}"> <i class="fa-solid fa-angle-left"></i> back </a></div>
+
+    <div class="align-vert">
+
+    <div class="lgn-bbl rounded25">
+
+       
+
+        <div class="logo-lgn">
+
+            <a href="{% url 'index' %}">
+                <img
+                  src="{% static 'assets/logo.svg' %}"
+                 
+                />
+              </a>
+            
+
+            <h1> Login </h1>
+        </div>
+
+        
+
+        
+
+    <form method='POST'>
+        {% csrf_token %}
+        <input class='rounded25 input-f' name='moodle_id' type=text placeholder="Moodle ID">
+        <input class='rounded25 input-f' name="password" type="password" placeholder="password">
+        <br>
+        <div class="btn-cnt">
+            
+                <button class="rounded25 sub-sub rl-btn"> Login </button>
+
+
+            
+        </div>
+        <div class="btn-cnt">
+            
+            <p>  <a href="#" > Forgot Password </a> </p>
+
+        
+    </div>
+
+        
+    </form>
+   
+
+
+        
+    </div>
+
+</div>
+
+
+
+
+</div>
+{% endblock %}
