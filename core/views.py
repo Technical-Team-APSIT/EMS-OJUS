@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth import login, logout , authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Event
+from .models import Event, Signed
 
 
 
@@ -25,15 +25,15 @@ def loginUser(request):
         return redirect('index')
 
     if request.method == 'POST':
-        moodle_id = request.POST.get('moodle_id')
+        id = request.POST.get('id')
         password = request.POST.get('password')
 
         try:
-            user = User.objects.get(moodle_id=moodle_id)
+            user = User.objects.get(id=id)
         except:
             messages.error(request, 'User does not exist')
 
-        user = authenticate(request, moodle_id=moodle_id, password=password)
+        user = authenticate(request, id=id, password=password)
 
         if user is not None:
             login(request, user)
@@ -55,8 +55,8 @@ def logoutUser(request):
 def registerEvent(request, pk):
     event = Event.objects.get(id=pk)
     user = request.user
-    if request.method == 'POST':
-        Signed.objects.create(
+    
+    Signed.objects.create(
             participant = user,
             event = event,
         )

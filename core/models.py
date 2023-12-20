@@ -5,16 +5,16 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    moodle_id = models.CharField(unique=True, primary_key=True)
+    id = models.CharField(unique=True, primary_key=True)
     dept = models.CharField(max_length=6, null=True)
     year = models.CharField(max_length=6, null=True)
     fname = models.CharField(blank=True)
     lname = models.CharField(blank= True)
 
     def __str__(self):
-        return str(f""+self.moodle_id+"_"+self.fname+"_"+self.lname+"")
+        return str(f""+self.id+"_"+self.fname+"_"+self.lname+"")
 
-    USERNAME_FIELD = 'moodle_id'
+    USERNAME_FIELD = 'id'
 
     REQUIRED_FIELDS = ['username']
 

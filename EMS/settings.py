@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 
-
+    #libraries
+    'import_export', 
+    
      #user apps
     'core.apps.CoreConfig',
     
@@ -78,7 +80,6 @@ WSGI_APPLICATION = 'EMS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 
 
 
