@@ -19,6 +19,16 @@ def index(request):
     return render(request, 'core/index.html', context)
 
 
+def schedule(request):
+    user = request.user
+    events = Event.objects.all()
+    context = {
+        'events' : events,
+        'user' : user,
+    }
+    return render(request, 'core/schedule.html', context)
+
+
 def loginUser(request):
     page = 'login'
     if request.user.is_authenticated:

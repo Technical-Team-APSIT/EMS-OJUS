@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Croissant+One&family=Lobster&family=Lora:ital,wght@1,500&family=Mina:wght@700&family=Notable&family=Open+Sans:wght@300;400&family=Play&family=Poppins:wght@700&family=Rajdhani:wght@300;700&family=Rubik+Doodle+Shadow&family=Russo+One&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    position: relative;
+    background-image: url("./../images/doodles-bg.png");
+    background-repeat: repeat;
+    background-size: 700px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -2;
+}
+
+#home-section {
+    position: relative;
+    min-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+#home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    z-index: -1;
+}
+
+nav ul li {
+    list-style :none;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: #fffffffe;
+    font-size: 22px;
+    font-weight: 650;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    font-weight: 650;
+}
+.back-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#home-section .content {
+    z-index: 1;
+    color: white; /* Adjust text color as needed */
+}
+
+#socials{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #socials p{
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        color:white;
+        text-align: center;
+    }
+
+
+    .icons{
+        display: inline-flex  ;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icons a img{
+        width: 50px;
+        height: 50px;
+        transition: tranform 0.3s ease;
+    }
+
+    .icons a img:hover{
+       transform: scale(1);
+    }
+
+.logo{
+    width: 100px;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background-color: #070606;
+    box-shadow: 10px 10px 20px black;
+}
+
+.logo img {
+    max-width: 80px;
+    height: auto;
+    display: block;
+    
+}
+
+.header{
+    max-height:80px;
+    align-items: center;
+}
+nav {
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    padding: 0px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+.hero-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.hero {
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.hero-container img{
+    max-height: 50vh;
+}
+
+.hero h1{
+    font-size: 12vh;
+}
+.hero h2{
+    
+    font-size: 8vh;
+}
+
+.hero h1,h2{
+    font-family: 'Archivo Black', sans-serif;
+    color: transparent;
+    -webkit-text-stroke:1px #fff ;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: 0 0;
+}
+
+#section-2{
+    min-width: 100%;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background-color: rgba(7, 6, 6, 0.8);
+    padding-top: 50px;
+    padding-bottom: 70px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    margin-bottom: 100px;
+    
+}
+
+#section-2.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+#section-2::after{
+    z-index: -1;
+    filter: blur(5px);
+}
+
+.divider {
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2em;
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.subhead{
+    font-family: "Poppins", sans-serif;
+    padding-top: 20px;
+}
+
+#section-2 img{
+    width: 70%;
+    height: auto;
+}
+
+#section-2 .description{
+    max-width: 60%;
+}
+
+#section-2 .description h3,h4{
+    font-family: 'Croissant One', sans-serif;
+}
+
+.description h3{
+    font-size: 10vh;
+    color: chocolate;
+}
+.blurb{
+    font-size: 4vh;
+    color: antiquewhite;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.sports-card-sm {
+    width: 307px;
+    height: 197px;
+    position: relative;
+    margin: 50px 0 0 50px;
+    overflow: hidden;
+    transition: background 0.3s; 
+}
+
+.sports-card-sm::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(66deg, rgba(217, 217, 217, 1) 0%, #D9D9D9 100%);
+    border-radius: 21px;
+    z-index: -1;
+    transition: background 0.3s; /* Add transition for a smoother effect */
+}
+
+.sports-card-sm:hover::after {
+    content: "Meet J.";
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+}
+
+.sports-card-sm p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 40px;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    line-height: 50px;
+    word-wrap: break-word;
+    width: 100%;
+    text-align: center;
+    transition: color 0.3s; /* Add transition for a smoother effect */
+}
+
+.sports-card-sm:hover p {
+    color: linear-gradient(rgba(217, 217, 217, 0.98), rgba(217, 217, 217, 0));
+}
+
+
+#section-4 .heading h5{
+    font-family: 'Croissant One', sans-serif;
+    font-size: 10vh;
+    color: chocolate;
+}
+#carouselExample{
+    padding:5vw;
+}
+
+#section-4 {
+    opacity: 0;
+    transition: opacity 1s ease;
+    line-height: 5px;
+}
+#section-4.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.carousel-inner{
+    border-radius: 20px;
+    max-height: 80vh;
+    object-fit: cover;
+}
+
+.gdiv {
+    height: 2px;
+    background-color: #f8f8f8;
+    border: none; /* Remove default border */
+    margin: 10px 0; /* Adjust margin as needed */
+}
+
+#section-3{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    line-height: 3rem;
+    color: #f0f0f0;
+    
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #f8f8f8;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+
+}
+.socials a:hover i{
+    color: aqua;
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+    color: crimson;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 1000;
+    color: crimson;
+}
+
+
+
+
+    @media screen and (max-width: 600px) {
+
+        body{
+            background-size: 500px;
+        }
+        #home-section::before,
+        #home-section::after {
+            height: 15px;
+        }
+    
+        .hero h1 {
+            font-size: 20vw;
+        }
+    
+        .hero h2 {
+            font-size: 12vw;
+        }
+    
+        #section-2 .description h3 {
+            font-size: 6vw;
+        }
+    
+        #section-2 .description h4 {
+            font-size: 3vw;
+        }
+
+        .hero{
+            display: hidden;
+        }
+    }
+
+    .gradientText{
+        background: linear-gradient(45deg, #ff8a00, #e52e71);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        
+    }
+
+    .back-video {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        width: 100%;
+        height: auto;
+    }
+    
+    @media  (min-aspect-ratio:16/9){
+        .back-video{
+            width: 100%;
+            height: auto;
+        }
+        
+    }
+    @media  (max-aspect-ratio:16/9){
+        .back-video{
+            width: 100%;
+            height: auto;
+        }
+        
+    }
+
+
