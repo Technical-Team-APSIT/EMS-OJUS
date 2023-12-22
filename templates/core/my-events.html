@@ -12,7 +12,16 @@
             <ul>
              <li><a href="#section-3">EVENTS</a></li>
              <li><a href="{% url 'schedule' %}">SCHEDULE</a></li>
+             {% if request.user.is_authenticated %}
+             
+             <li><a href="{% url 'my-events' %}">YOUR EVENTS</a></li>
+             <li><a href="{% url 'logout' %}"> LOGOUT </a></li>
+
+             {% else %}
+
              <li><a href="{% url 'login' %}">LOGIN</a></li>
+             
+             {% endif %}
             </ul>
          </nav>
 
