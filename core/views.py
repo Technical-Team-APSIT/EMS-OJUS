@@ -28,6 +28,15 @@ def schedule(request):
     }
     return render(request, 'core/schedule.html', context)
 
+def myEvents(request):
+    user = request.user
+    signed = Signed.objects.filter(participant=user)
+    context = {
+        'user' : user,
+        'signed': signed,
+    }
+    return render(request, 'core/my-events.html', context)
+
 
 def loginUser(request):
     page = 'login'
@@ -66,7 +75,8 @@ def registerEvent(request, pk):
     event = Event.objects.get(id=pk)
     user = request.user
     
-    Signed.objects.create(
+    
+    Signed.objects.get_or_create(
             participant = user,
             event = event,
         )

@@ -23,17 +23,22 @@ class User(AbstractUser):
 class Event(models.Model):
     name = models.CharField(null=True)
     desc = models.TextField(null=True)
-    rules = models.TextField(null=True)
     venue = models.CharField(null=True)
     date = models.DateField()
     time = models.TimeField()
+    img = models.ImageField(upload_to='images', null=True, blank=True, default='logo.png')
 
     def __str__(self):
         return str(self.name)
 
+class Rule(models.Model):
+    name = models.CharField(null=True)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+
 class eventHead(models.Model):
     name = models.CharField(null=True)
-    contact = models.IntegerField()
+    contact = models.BigIntegerField(null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
 class Signed(models.Model):

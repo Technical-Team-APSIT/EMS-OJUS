@@ -6,6 +6,7 @@ from django import forms
 
 admin.site.register(models.Event)
 admin.site.register(models.eventHead)
+admin.site.register(models.Rule)
 
 class SignedAdmin(ExportActionMixin, admin.ModelAdmin):
     list_display = ('event_name', 'fname', 'lname', 'id', 'dept', 'year')

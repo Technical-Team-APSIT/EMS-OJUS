@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{request.user.id}}
+
+  <hr>
+
+  {% for s in signed %}
+
+  <a href='#'> {{s.event.name}} </a>
+  <img src='{{s.event.img.url}}'>
+
+  {% endfor %}
+
+  <a href='{% url "schedule" %}'> Schedule </a>
+{% endblock content %}
