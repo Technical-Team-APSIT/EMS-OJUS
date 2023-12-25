@@ -8,10 +8,18 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/styl2.css' %}">
+<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
 <link rel="stylesheet" href="{% static 'css/schedule.css' %}">
 <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 <script src="{% static 'js/jquery3.1.0.min.js'%}"></script>
 <script src="{% static 'js/aos.js' %}"></script>
+
+
+    <div id="back-to-home" onclick="window.location.href='{{ request.META.HTTP_REFERER }}'"><i class="fa-solid fa-caret-left"></i> Back</div>
 
     <div class="timeline">
         <div class="timeline_info">
@@ -138,6 +146,26 @@
             </div>
         </div>
     </div>
+
+    <footer>
+
+        <div class="footer-content">
+            <h3>OJUS 2024</h3>
+            <p>Ojus - Radiance of Euphoria an intercollegiate festival hosted annually by the students of APSIT.</p>
+            <span style="color: #fff;">Follow Us On</span>
+            <ul class="socials">
+                <li><a href="https://www.instagram.com/ojus_apsit/"><i class="fa-brands fa-square-instagram" id='insta'></i></a></li>
+                <li><a href="https://www.youtube.com/@ojus-radianceofeuphoria5292"><i class="fa-brands fa-square-youtube" id='yt'></i></a></li>
+                <li><a href="https://www.facebook.com/ojusapsit/"><i class="fa-brands fa-square-facebook" id='fb'></i></a></li>
+                <li><a href="https://www.linkedin.com/company/ojus-apsit/about/"><i class="fa-brands fa-linkedin" id='ldn'></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2024 Ojus. designed by <span><a href="#">Ojus tech team👨‍💻</a></span></p>
+        </div>
+
+        </footer>
+    
     <script>
         AOS.init();
     </script>

@@ -6,6 +6,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
+#back-to-home {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(45deg, #ff8a00, #d50f75); 
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fffffffe;
+  font-size: 16px;
+  margin-bottom: 10px;
+  z-index: 99;
+}
+
 body{
   position: relative;
   background-image: url("../static/assets/doodles-bg.png");

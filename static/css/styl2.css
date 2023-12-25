@@ -31,7 +31,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: -2;
 }
 
@@ -57,6 +57,41 @@ body::before {
     z-index: -1;
 }
 
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+nav ul li a:hover{
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    font-weight: 650;
+}
+
+nav {
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    padding: 5px 5% 5px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    z-index: 98;
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 nav ul li {
     list-style :none;
     display: inline-block;
@@ -72,34 +107,141 @@ nav ul li a {
     font-weight: 650;
 }
 
-nav ul li a:hover{
-    text-decoration: none;
-    background: linear-gradient(45deg, #ff8a00, #e52e71);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 22px;
-    font-weight: 650;
+.menu-icon i{
+    display: hidden;
+    opacity: 0;
 }
+
+@media screen and (max-width: 760px) {
+    #home-section{
+        max-height: 80vh;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+    
+    nav ul {
+        border-radius: 15px;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        justify-self: center;
+        top: 60px;
+        right: 0;
+        transform: translateX(50%);
+        width: 100%;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+    
+    nav ul.show {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in-out forwards;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 10px;
+    }
+    
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .menu-icon.open {
+        transform: rotate(90deg);
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+
+    .menu-icon i{
+        opacity: 1;
+        font-size: 3.5vh;
+        color: white;
+    }
+
+    .hero h1{
+        display: none;
+    }
+    .hero h2{
+        font-size: 10vw;
+    }
+
+    
+
+    #socials img{
+        max-height: 40px;
+        width: auto;
+    }
+
+    .back-video{
+        display: hidden;
+        opacity: 0;
+    }
+
+    .back-video2{
+        opacity: 1;
+    }
+
+}
+
 .back-video {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
     z-index: -2;
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
+.back-video2{
+    display: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -2;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 #home-section .content {
     z-index: 1;
     color: white; /* Adjust text color as needed */
 }
 
 #socials{
+        margin-bottom: 3vh;
         position: absolute;
-        bottom: 20px;
-        right: 20px;
+        bottom: 10px;
+        right: 10px;
         display: flex;
         gap: 10px;
         align-items: center;
@@ -125,13 +267,15 @@ nav ul li a:hover{
         transition: tranform 0.3s ease;
     }
 
-    .icons a img:hover{
-       transform: scale(1);
+    .icons a:hover img {
+        transform: scale(1.1);
     }
 
 .logo{
-    width: 100px;
+    position:stic;
+    width: 12vh;
     border-radius: 50%;
+    margin-top: 0.5rem;
     top: 0;
     right: 0;
     padding: 5px;
@@ -149,18 +293,6 @@ nav ul li a:hover{
 .header{
     max-height:80px;
     align-items: center;
-}
-nav {
-    width: 100%;
-    position: absolute;
-    margin-top: 10px;
-    display: inline-block;
-    top: 0;
-    left: 0;
-    padding: 0px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 
@@ -193,6 +325,7 @@ nav {
 .hero h1,h2{
     font-family: 'Archivo Black', sans-serif;
     color: transparent;
+    background: linear-gradient(45deg, #ff8a00, #e52e71); 
     -webkit-text-stroke:1px #fff ;
     -webkit-background-clip: text;
     background-clip: text;
@@ -207,7 +340,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: left;
-    background-color: rgba(7, 6, 6, 0.8);
+    background-color: rgba(7, 6, 6, 0.6);
     padding-top: 50px;
     padding-bottom: 70px;
     opacity: 0;
@@ -236,6 +369,7 @@ nav {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    height: 50px;
 }
 
 .subhead{
@@ -244,12 +378,13 @@ nav {
 }
 
 #section-2 img{
-    width: 70%;
+    width: 90%;
     height: auto;
 }
 
 #section-2 .description{
-    max-width: 60%;
+    max-width: 95%;
+    
 }
 
 #section-2 .description h3,h4{
@@ -266,10 +401,44 @@ nav {
     font-family: 'Poppins', sans-serif;
 }
 
+@media screen and (max-width: 760px) {
+    #section-2 {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    #section-2 img {
+        width: 50%;
+        margin-bottom: 10px; /* Add some space between the image and the description */
+    }
+
+    #section-2 .description {
+        max-width: 100%;
+        padding: 0px 10px;
+
+        h3{
+            text-align:left;
+        }
+    }
+}
+
+
+
 .card-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+}
+
+#section-3{
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+
+#section-3.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease;
 }
 
 .sports-card-sm {
@@ -278,6 +447,7 @@ nav {
     position: relative;
     margin: 50px 0 0 50px;
     overflow: hidden;
+    align-items: center;
     transition: background 0.3s; 
 }
 
@@ -295,7 +465,7 @@ nav {
 }
 
 .sports-card-sm:hover::after {
-    content: "Meet J.";
+    content: "";
     background: linear-gradient(45deg, #ff8a00, #e52e71);
 }
 
@@ -307,20 +477,23 @@ nav {
     background: linear-gradient(45deg, #ff8a00, #e52e71);
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent;
+    color: transparent; 
     font-size: 40px;
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     line-height: 50px;
     word-wrap: break-word;
     width: 100%;
     text-align: center;
-    transition: color 0.3s; /* Add transition for a smoother effect */
+    transition: color 0.3s;
 }
 
 .sports-card-sm:hover p {
-    color: linear-gradient(rgba(217, 217, 217, 0.98), rgba(217, 217, 217, 0));
+    /* color: linear-gradient(rgba(217, 217, 217, 0.98), rgba(217, 217, 217, 0)); */
+    color: linear-gradient(45deg, #ff8a00, #e52e71);;
 }
+
+
 
 
 #section-4 .heading h5{
@@ -331,6 +504,12 @@ nav {
 #carouselExample{
     padding:5vw;
 }
+
+.sports-card-sm:hover
+{
+    color: #fff;
+}
+
 
 #section-4 {
     opacity: 0;
@@ -351,8 +530,8 @@ nav {
 .gdiv {
     height: 2px;
     background-color: #f8f8f8;
-    border: none; /* Remove default border */
-    margin: 10px 0; /* Adjust margin as needed */
+    border: none;
+    margin: 10px 0;
 }
 
 #section-3{
@@ -360,16 +539,22 @@ nav {
     margin-bottom: 50px;
 }
 
+footer{
+    background-color:rgba(0, 0, 0, 0.8);
+    padding-top: 25px;
+
+}
+
 .footer{
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    background: #111;
     height: auto;
     width: 100vw;
     padding-top: 40px;
     color: #fff;
+    align-items: center;
+    justify-content: center;
 }
 .footer-content{
     display: flex;
@@ -387,11 +572,13 @@ nav {
     
 }
 .footer-content p{
+    font-family:'Poppins', serif;
     max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
-    font-size: 14px;
+    font-size: 16px;
     color: #f8f8f8;
+    
 }
 .socials{
     list-style: none;
@@ -399,21 +586,35 @@ nav {
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
+    padding-right: 40px;
 }
 .socials li{
-    margin: 0 10px;
+    margin: 0 15px;
 }
 .socials a{
     text-decoration: none;
     color: #fff;
 }
 .socials a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
-
+    font-size: 30px;
+    transition: color .4s ease;    
 }
-.socials a:hover i{
-    color: aqua;
+.socials a:hover i#insta{
+    background: -webkit-radial-gradient(33% 100% circle, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.socials a:hover i#yt{
+    color: #cd201f;
+}
+.socials a:hover i#fb{
+    transform: scale(1.1); /* Increase the scale as needed */
+    color: #1877f2;
+}
+.socials a:hover i#ldn{
+    transform: scale(1.1); /* Increase the scale as needed */
+    color: #0077B5;
 }
 
 .footer-bottom{
@@ -423,22 +624,22 @@ nav {
     text-align: center;
 }
 .footer-bottom p{
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
     word-spacing: 2px;
     text-transform: capitalize;
     color: crimson;
 }
-.footer-bottom span{
+.footer-bottom span a{
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    opacity: .4;
+    opacity: 0.6;
     font-weight: 1000;
-    color: crimson;
+    /* color: crimson; */
+    text-decoration: none;
 }
 
-
-
-
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 760px) {
 
         body{
             background-size: 500px;
@@ -467,6 +668,8 @@ nav {
         .hero{
             display: hidden;
         }
+
+        
     }
 
     .gradientText{
@@ -477,24 +680,20 @@ nav {
         
     }
 
-    .back-video {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        width: 100%;
-        height: auto;
-    }
+    video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    top: 50%;
+    left: 50%;
+}
+
     
     @media  (min-aspect-ratio:16/9){
-        .back-video{
-            width: 100%;
-            height: auto;
-        }
-        
-    }
-    @media  (max-aspect-ratio:16/9){
-        .back-video{
+        .back-video2{
+            object-fit: fill;
             width: 100%;
             height: auto;
         }
