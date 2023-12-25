@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+    <link href="{% static 'css/event-detail.css' %}" type="text/css" rel="stylesheet" />
+
+    <script src="{% static 'https://kit.fontawesome.com/93e46d1cec.js' %}" crossorigin="anonymous"></script>
+
+
+
+    <section>
+    <div id="back-to-home" onclick="window.location.href='{{ request.META.HTTP_REFERER }}'"><i class="fa-solid fa-caret-left"></i> Back</div>
+    <div class="events">
+        <div class="main-img">
+            <img src="{{events.img.url}}" alt="">
+            <div class="submit">
+                <button type="submit" onclick="window.location.href = '{% url "reg" events.slug %}'" class="btn" >Register</button>
+            </div>  
+        </div>
+        <div class="text">
+            <h4>Event Details</h4>
+            <h1>{{events.name}}</h1>
+            <h2>Rules</h2>
+            <hr>
+            <p>
+            
+                {% for rule in rules %}
+                - {{rule.name}} <br>
+                {% endfor %}
+                
+            </p>
+            <div class="last-text">
+                <div class="text1">
+                    <h3>VENUE</h3>
+                    <h5>{{events.venue}}</h5>
+                </div>
+                <div class="text2">
+                    <h3>Date </h3>
+                    <h5>{{events.date}}</h5>
+                </div>
+                <div class="text3">
+                    <h3>Time</h3>
+                    <h5>{{events.date}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+        <footer>
+
+        <div class="footer-content">
+            <h3>OJUS 2024</h3>
+            <p>Ojus - Radiance of Euphoria an intercollegiate festival hosted annually by the students of APSIT.</p>
+            <span style="color: #fff;">Follow Us On</span>
+            
+            <ul class="socials">
+                <li><a href="https://www.instagram.com/ojus_apsit/"><i class="fa-brands fa-square-instagram" id='insta'></i></a></li>
+                <li><a href="https://www.youtube.com/@ojus-radianceofeuphoria5292"><i class="fa-brands fa-square-youtube" id='yt'></i></a></li>
+                <li><a href="https://www.facebook.com/ojusapsit/"><i class="fa-brands fa-square-facebook" id='fb'></i></a></li>
+                <li><a href="https://www.linkedin.com/company/ojus-apsit/about/"><i class="fa-brands fa-linkedin" id='ldn'></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2024 Ojus. designed by <span><a href="#">Ojus tech team👨‍💻</a></span></p>
+        </div>
+
+        </footer>
+
+
+{% endblock %}

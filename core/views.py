@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth import login, logout , authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Event, Signed
+from .models import Event, Signed, Rule
 
 
 
@@ -17,6 +17,19 @@ def index(request):
         'user' : user,
     }
     return render(request, 'core/index.html', context)
+
+def eventDetails(request,slug):
+    user = request.user
+    events = get_object_or_404(Event, slug=slug)
+    rules = Rule.objects.filter(event = events)
+    
+    
+    context = {
+        'events' : events,
+        'user' : user,
+        'rules' : rules,
+    }
+    return render(request, 'core/event-detail.html', context)
 
 
 def schedule(request):

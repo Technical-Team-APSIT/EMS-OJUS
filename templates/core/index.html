@@ -7,7 +7,7 @@
 
   {% for event in events %}
 
-  <a href='{% url "reg" event.slug %}'> {{event.name}} </a>
+  <a href='{% url "details" event.slug %}'> {{event.name}} </a>
 
   {% endfor %}
 
