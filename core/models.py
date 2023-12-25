@@ -27,6 +27,8 @@ class Event(models.Model):
     date = models.DateField()
     time = models.TimeField()
     img = models.ImageField(upload_to='images', null=True, blank=True, default='logo.png')
+    slug = models.SlugField(default="", null=False)
+
 
     def __str__(self):
         return str(self.name)

@@ -56,6 +56,10 @@ class UserAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     search_fields = ['id', 'username', 'email', 'fname', 'lname']
     ordering = ('id',)
 
+class EventAdmin(admin.ModelAdmin):
+      prepopulated_fields = {"slug": ("name",)}
+
+
 
 
 admin.site.register(models.Signed, SignedAdmin)

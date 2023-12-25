@@ -12,6 +12,7 @@ urlpatterns = [
 
 
     path('event/<str:pk>', views.registerEvent, name='reg'),
+    path('register/<slug:slug>', views.registerEvent, name='reg'),
 
     
 ]

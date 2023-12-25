@@ -71,8 +71,8 @@ def logoutUser(request):
 
 
 @login_required(login_url='login')
-def registerEvent(request, pk):
-    event = Event.objects.get(id=pk)
+def registerEvent(request, slug):
+    event = Event.objects.get(slug=slug)
     user = request.user
     
     
