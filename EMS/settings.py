@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     #libraries
-    'import_export', 
+    'import_export',
+    'fontawesomefree',
     
      #user apps
     'core.apps.CoreConfig',
