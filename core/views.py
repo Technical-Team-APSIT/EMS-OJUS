@@ -57,15 +57,15 @@ def loginUser(request):
         return redirect('index')
 
     if request.method == 'POST':
-        id = request.POST.get('id')
+        moodle_id = request.POST.get('moodle_id')
         password = request.POST.get('password')
 
         try:
-            user = User.objects.get(id=id)
+            user = User.objects.get(moodle_id=moodle_id)
         except:
             messages.error(request, 'User does not exist')
 
-        user = authenticate(request, id=id, password=password)
+        user = authenticate(request, moodle_id=moodle_id, password=password)
 
         if user is not None:
             login(request, user)

@@ -29,11 +29,11 @@
     <img src="{% static 'assets/logo.png'  %}"  >
     </div>
     <div class="wrapper">
-        <form action="/" method='POST'>
+        <form method='POST'>
         {% csrf_token %}
             <h1>Log in </h1>
             <div class="input-box">
-                <input type="tel" id="id" name="username" required oninput="this.value = this.value.replace(/[^0-9]/g, '');" required pattern="\d*" placeholder="Moodle ID" required >
+                <input type="text" id="moodle_id" name="moodle_id"  placeholder="Moodle ID" required >
             </div>
             <div class="input-box">
                 <input class="password" type="password" id="password" name="password" placeholder="DD-MM-YYYY" required>
