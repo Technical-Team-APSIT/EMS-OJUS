@@ -1,15 +1,254 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
-  {{request.user.id}}
 
-  <hr>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/styl2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/card.css' %}">
+    
 
-  {% for event in events %}
 
-  <a href='{% url "details" event.slug %}'> {{event.name}} </a>
+    <div id="home-section" class="container">
+        <div class="header">
+           
+<nav>
+            <a href="{% url 'index' %}"><img alt="logo" src="{% static 'assets/logo.png' %}" class="logo"></a>
+                            <div class="menu-icon" onclick="toggleMenu()">
 
-  {% endfor %}
+            <ul>
+             <li><a href="#section-3">EVENTS</a></li>
+             <li><a href="{% url 'schedule' %}">SCHEDULE</a></li>
+             {% if request.user.is_authenticated %}
+             
+             <li><a href="{% url 'my-events' %}">YOUR EVENTS</a></li>
+             <li><a href="{% url 'logout' %}"> LOGOUT </a></li>
 
-  <a href='{% url "schedule" %}'> Schedule </a>
-{% endblock content %}
+             {% else %}
+
+             <li><a href="{% url 'login' %}">LOGIN</a></li>
+             
+             {% endif %}
+            </ul>
+         </nav>
+        </div>
+        <div id="hero-container" class="hero-container">
+            <div class="zero">
+                <div class="video-container">
+                    <video autoplay loop muted plays-inline class="back-video">
+                        <source src="{% static 'assets/videos/back.mp4' %}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            
+        <div class="hero">
+            <h1>2024<br</h1>
+            <h1>OJUS SPORTS</h1>
+            <h2>Radiance Of Euphoria !</h2>
+        </div>
+        <img alt="ojus-sports" src="{% static 'assets/ojus_sports.png' %}">
+        </div>
+        <div id="socials">
+            <p>Follow Us On:</p>
+            <div class="icons">
+                <a href="https://www.instagram.com/ojus_apsit/" ><img alt="instagram" src="{% static 'assets/Instagram.png' %}"></a>
+                <a href="https://www.facebook.com/ojusapsit/" ><img alt="instagram" src="{% static 'assets/Facebook.png' %}"></a>
+                <a href="https://www.youtube.com/@ojus-radianceofeuphoria5292" ><img alt="instagram" src="{% static 'assets/Youtube.png' %}"></a>
+                <a href="https://www.linkedin.com/company/ojus-apsit/about/" ><img alt="instagram" src="{% static 'assets/LinkedIn.png' %}"></a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="gdiv">
+
+
+      <div class="divider"> 
+            ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT 
+   </div>
+
+    <div id="section-2">
+        <div class="about-img">
+            <img alt="ojus-logo" src="{% static 'assets/logo.png' %}">
+        </div>
+        <div class="description">
+            
+            <div class="description">
+                <h4 class="blurb">OJUS - Radiance of Euphoria is an intercollegiate festival hosted annually by the students of APSIT. It's an amalgamation of Sports, Literature & Cultural festival comprising of intellectual as well as fun & creative events with a variety of games and entertainment shows. It's not just a festival of various colorful events but a platform where students freely express themselves and our hidden gems come out with their talents.</h4>
+                <h4 class="subhead gradientText"> When:</h4>
+                <h4 class="blurb">3rd to 6th Jan</h4>
+                <h4 class="subhead gradientText"> Where:</h4>
+                <h4 class="blurb"> APSIT Campus</h4>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <hr class="gdiv">
+
+    <div class="divider">
+
+        EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS EVENTS
+
+</div>
+    <div id="section-3">
+        <div class="card-wrapper">
+            <div class="ag-format-container">
+                <div class="ag-courses_box">
+                  {% for event in events %}
+                  <div class="ag-courses_item">
+                    <a href="{% url 'details' event.slug %}" class="ag-courses-item_link">
+                      <div class="ag-courses-item_bg"></div>
+              
+                      <div class="ag-courses-item_title">
+                        {{event.name}}
+                      </div>
+              
+                      <div class="ag-courses-item_date-box">
+                        Event Head:<br>
+                        <span class="ag-courses-item_date">
+                        {% for rule in events.eventhead_set.all %}
+                          {{rule.name}} - {{rule.contact}} <br>
+                        {% endfor %}
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+    
+          </div>
+    </div>
+
+    <hr class="gdiv">
+
+    <div class="divider">
+
+        GALLERY GALLERY GALLERY GALLERY GALLERY GALLERY GALLERY GALLERY 
+
+</div>
+
+  
+
+    <div id="section-4">
+        <div class="heading">
+        </div>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'assets/carousel/ojussports.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'assets/carousel/opening.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'assets/carousel/volley.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'assets/carousel/foot.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'assets/carousel/tow1.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+         
+    </div>
+   
+    <hr class="gdiv">
+    <div> 
+    <footer>
+
+        <div class="footer-content">
+            <h3>OJUS 2024</h3>
+            <p>Ojus - Radiance of Euphoria an intercollegiate festival hosted annually by the students of APSIT.</p>
+            <span style="color: #fff;">Follow Us On</span>
+            <ul class="socials">
+                <li><a href="https://www.instagram.com/ojus_apsit/"><i class="fa-brands fa-square-instagram" id='insta'></i></a></li>
+                <li><a href="https://www.youtube.com/@ojus-radianceofeuphoria5292"><i class="fa-brands fa-square-youtube" id='yt'></i></a></li>
+                <li><a href="https://www.facebook.com/ojusapsit/"><i class="fa-brands fa-square-facebook" id='fb'></i></a></li>
+                <li><a href="https://www.linkedin.com/company/ojus-apsit/about/"><i class="fa-brands fa-linkedin" id='ldn'></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy;2024 Ojus. designed by <span><a href="#">Ojus tech team👨‍💻</a></span></p>
+        </div>
+
+        </footer></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script>
+    var navbar = document.querySelector('nav');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 0) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var section2 = document.getElementById('section-2');
+        var section3 = document.getElementById('section-3');
+        var section4 = document.getElementById('section-4');
+        var windowHeight = window.innerHeight;
+
+        function fadeInSection(element) {
+            var sectionTop = element.getBoundingClientRect().top;
+
+            if (sectionTop < windowHeight / 2) {
+                element.classList.add('fade-in');
+            } else {
+                element.classList.remove('fade-in');
+            }
+        }
+
+        function fadeOutSection(element) {
+            var sectionTop = element.getBoundingClientRect().top;
+
+            if (sectionTop > windowHeight * 1.5 || sectionTop < -windowHeight / 1) {
+                element.classList.remove('fade-in');
+            } 
+        }
+
+        window.addEventListener('scroll', function () {
+            fadeInSection(section2);
+            fadeOutSection(section2);
+
+            fadeInSection(section3);
+            fadeOutSection(section3);
+
+            fadeInSection(section4);
+            fadeOutSection(section4);
+        });
+    });
+</script>
+<script>
+    function toggleMenu() {
+    const menu = document.querySelector('nav ul');
+    const menuIcon = document.querySelector('.menu-icon');
+    
+    menu.classList.toggle('show');
+    menuIcon.classList.toggle('open');
+
+    window.onscroll = () =>
+    {
+        menu.classList.remove('show');
+        menuIcon.classList.remove('open');
+    }
+
+}
+
+
+</script>
+{% endblock %}

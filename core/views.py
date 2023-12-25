@@ -11,7 +11,7 @@ from .models import Event, Signed, Rule
 
 def index(request):
     user = request.user
-    events = Event.objects.all()
+    events = Event.objects.prefetch_related('eventhead_set').all()
     context = {
         'events' : events,
         'user' : user,
