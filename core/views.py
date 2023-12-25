@@ -4,6 +4,8 @@ from django.contrib.auth import login, logout , authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Event, Signed, Rule
+from datetime import date
+
 
 
 
@@ -34,10 +36,17 @@ def eventDetails(request,slug):
 
 def schedule(request):
     user = request.user
-    events = Event.objects.all()
+    day1 = Event.objects.filter(date=date(2024, 1, 3))
+    day2 = Event.objects.filter(date=date(2024, 1, 4))
+    day3 = Event.objects.filter(date=date(2024, 1, 5))
+    day4 = Event.objects.filter(date=date(2024, 1, 6))
+
     context = {
-        'events' : events,
-        'user' : user,
+        'day1': day1,
+        'day2': day2,
+        'day3': day3,
+        'day4': day4,
+        'user': user,
     }
     return render(request, 'core/schedule.html', context)
 
