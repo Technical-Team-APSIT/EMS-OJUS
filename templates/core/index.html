@@ -106,8 +106,8 @@
                       <div class="ag-courses-item_date-box">
                         Event Head:<br>
                         <span class="ag-courses-item_date">
-                        {% for rule in events.eventhead_set.all %}
-                          {{rule.name}} - {{rule.contact}} <br>
+                        {% for head in event.eventhead_set.all %}
+                           {{head.name}} - {{head.contact}} <br>
                         {% endfor %}
                         </span>
                       </div>

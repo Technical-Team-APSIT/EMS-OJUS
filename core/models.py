@@ -46,4 +46,9 @@ class eventHead(models.Model):
 class Signed(models.Model):
     participant = models.ForeignKey(User, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    dept = models.CharField(max_length=6, null=True)
+    year = models.CharField(max_length=6, null=True)
+    fname = models.CharField(max_length= 200, blank=True)
+    lname = models.CharField(max_length= 200, blank= True)
+    ename = models.CharField(null=True, max_length= 200)
 # Create your models here.

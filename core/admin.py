@@ -31,12 +31,12 @@ class SignedAdmin(ExportActionMixin, admin.ModelAdmin):
         return obj.participant.year
 
 class UserResource(resources.ModelResource):
-    moodle_id = fields.Field(column_name='moodle_id', attribute='id')
-    fname = fields.Field(column_name='fname')
-    lname = fields.Field(column_name='lname')
-    password = fields.Field(column_name='password')
-    dept = fields.Field(column_name='dept')
-    year = fields.Field(column_name='year')
+    moodle_id = fields.Field(column_name='moodle_id', attribute='moodle_id')
+    fname = fields.Field(column_name='fname', attribute='fname')
+    lname = fields.Field(column_name='lname', attribute='lname')
+    password = fields.Field(column_name='password', attribute='password')
+    dept = fields.Field(column_name='dept', attribute='dept' )
+    year = fields.Field(column_name='year', attribute='year')
 
     class Meta:
         model = models.User
@@ -54,6 +54,7 @@ class UserAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('moodle_id', 'dept', 'year', 'username', 'email', 'is_staff', 'is_active', 'date_joined', 'fname', 'lname')
     search_fields = ['moodle_id', 'username', 'email', 'fname', 'lname']
     ordering = ('moodle_id',)
+    prepopulated_fields = {"username" : ("moodle_id",)}
 
 class EventAdmin(admin.ModelAdmin):
       prepopulated_fields = {"slug": ("name",)}

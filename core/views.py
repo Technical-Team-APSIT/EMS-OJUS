@@ -14,6 +14,7 @@ from datetime import date
 def index(request):
     user = request.user
     events = Event.objects.prefetch_related('eventhead_set').all()
+    
     context = {
         'events' : events,
         'user' : user,
@@ -101,6 +102,12 @@ def registerEvent(request, slug):
     Signed.objects.get_or_create(
             participant = user,
             event = event,
+            fname = user.fname,
+            lname = user.lname,
+            dept = user.dept, 
+            year = user.year,
+            ename = event.name
+
         )
 
     return HttpResponse(f'Signed up sucessfully for'+ event.name)
