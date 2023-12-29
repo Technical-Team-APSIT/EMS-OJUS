@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Croissant+One&family=Lobster&family=Lora:ital,wght@1,500&family=Mina:wght@700&family=Notable&family=Open+Sans:wght@300;400&family=Play&family=Poppins:wght@700&family=Rajdhani:wght@300;700&family=Rubik+Doodle+Shadow&family=Russo+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +7,35 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+  position: relative;
+  background-image: url("../static/assets/doodles-bg.png");
+  background-repeat: repeat;
+  background-size: 700px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto' , sans-serif;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -2;
+}
 #back-to-home {
   position: fixed;
   top: 15px;
@@ -20,31 +50,10 @@
   z-index: 99;
 }
 
-body{
-  position: relative;
-  background-image: url("../static/assets/doodles-bg.png");
-  background-repeat: repeat;
-  background-size: 700px;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto' , sans-serif;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: -2;
-}
-
 .timeline {
   max-width: 1050px;
   width: 90%;
-  margin: 50px auto;
+  margin: 100px auto;
 }
 
 .timeline_info {
@@ -54,12 +63,14 @@ body::before {
 }
 
 .timeline_info h2 {
-  font-size: 32px;
+  color: aliceblue;
+  font-family: 'Notable', sans-serif;
+  font-size: 50px;
   text-transform: uppercase;
 }
 
 .timeline_info p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .timeline_bar {
@@ -79,7 +90,7 @@ body::before {
 .timeline_card {
   width: 92%;
   position: relative;
-  background-color: #fff;
+  background-color: #28282B;
   border-radius: 21px;
 }
 
@@ -94,7 +105,7 @@ body::before {
   color: #fff;
   padding: 15px;
   position: relative;
-  border-radius: 21px;
+  border-radius: 21px 21px 0 0;
 
 }
 
@@ -244,6 +255,7 @@ body::before {
 }
 
 @media (max-width: 700px) {
+  
   .timeline_card {
     width: 100%;
     margin-bottom: 30px;

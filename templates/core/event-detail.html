@@ -15,7 +15,7 @@
         <div class="main-img">
             <img src="{{events.img.url}}" alt="">
             <div class="submit">
-                <button type="submit" onclick="window.location.href = '{% url "reg" events.slug %}'" class="btn" >Register</button>
+                <button type="submit" onclick="window.location.href = '{% url "reg" events.slug %}'" class="btn" id="registerBtn">Register</button>
             </div>  
         </div>
         <div class="text">
@@ -47,7 +47,23 @@
         </div>
     </div>
     </section>
-
+    <figure class="notification" id="notificationPopup" style="display: none;">
+        <div class="notification__body">
+            <div class="notification__description">
+                <div class="icon__wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 12l5 5l10 -10"></path>
+                    </svg>
+                </div>
+                Registration Successful!
+            </div>
+            <button class="notification__button" onclick="redirectToMyEvents()">
+                My Events
+            </button>
+        </div>
+        <div class="notification__progress"></div>
+    </figure>
 
         <footer>
 
@@ -67,7 +83,17 @@
             <p>copyright &copy;2024 Ojus. designed by <span><a href="#">Ojus tech team👨‍💻</a></span></p>
         </div>
 
-        </footer>
+        </footer></div>
+        <script>
+            document.getElementById('registerBtn').addEventListener('click', function () {
+                this.disabled = true;
+                document.getElementById('notificationPopup').style.display = 'block';
+            });
+        
+            function redirectToMyEvents() {
+                window.location.href = 'my-events.html';
+            }
+        </script>
 
 
 {% endblock %}

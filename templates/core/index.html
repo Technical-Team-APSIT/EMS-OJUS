@@ -13,7 +13,9 @@
            
 <nav>
             <a href="{% url 'index' %}"><img alt="logo" src="{% static 'assets/logo.png' %}" class="logo"></a>
-                            <div class="menu-icon" onclick="toggleMenu()">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div><i class="fa-solid fa-bars"></i></div>
+              </div>
 
             <ul>
              <li><a href="#section-3">EVENTS</a></li>
@@ -74,9 +76,9 @@
             <div class="description">
                 <h4 class="blurb">OJUS - Radiance of Euphoria is an intercollegiate festival hosted annually by the students of APSIT. It's an amalgamation of Sports, Literature & Cultural festival comprising of intellectual as well as fun & creative events with a variety of games and entertainment shows. It's not just a festival of various colorful events but a platform where students freely express themselves and our hidden gems come out with their talents.</h4>
                 <h4 class="subhead gradientText"> When:</h4>
-                <h4 class="blurb">3rd to 6th Jan</h4>
+                <h4 class="blurb">3rd to 6th January</h4>
                 <h4 class="subhead gradientText"> Where:</h4>
-                <h4 class="blurb"> APSIT Campus</h4>
+                <h4 class="blurb"> A.P. Shah Institute of Technology [Campus] <br>TMC Ground ,Anandnagar</h4>
             </div>
 
         </div>
@@ -91,6 +93,28 @@
 
 </div>
     <div id="section-3">
+        <div class="btn-group">
+            <button>
+                <h6>DAY 1</h6>
+                <p>3 JAN</p>
+            </button>
+            <button>
+                <h6>DAY 2</h6>
+                <p>4 JAN</p>
+            </button>
+            <button>
+                <h6>DAY 3</h6>
+                <p>5 JAN</p>
+            </button>
+            <button>
+                <h6>DAY 4</h6>
+                <p>6 JAN</p>
+            </button>
+            <button>
+                <h6>DAY 5</h6>
+                <p>7 JAN</p>
+            </button>
+          </div>
         <div class="card-wrapper">
             <div class="ag-format-container">
                 <div class="ag-courses_box">
@@ -196,43 +220,7 @@ window.addEventListener('scroll', function() {
     }
 });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var section2 = document.getElementById('section-2');
-        var section3 = document.getElementById('section-3');
-        var section4 = document.getElementById('section-4');
-        var windowHeight = window.innerHeight;
 
-        function fadeInSection(element) {
-            var sectionTop = element.getBoundingClientRect().top;
-
-            if (sectionTop < windowHeight / 2) {
-                element.classList.add('fade-in');
-            } else {
-                element.classList.remove('fade-in');
-            }
-        }
-
-        function fadeOutSection(element) {
-            var sectionTop = element.getBoundingClientRect().top;
-
-            if (sectionTop > windowHeight * 1.5 || sectionTop < -windowHeight / 1) {
-                element.classList.remove('fade-in');
-            } 
-        }
-
-        window.addEventListener('scroll', function () {
-            fadeInSection(section2);
-            fadeOutSection(section2);
-
-            fadeInSection(section3);
-            fadeOutSection(section3);
-
-            fadeInSection(section4);
-            fadeOutSection(section4);
-        });
-    });
-</script>
 <script>
     function toggleMenu() {
     const menu = document.querySelector('nav ul');

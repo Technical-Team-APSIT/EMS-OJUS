@@ -219,17 +219,6 @@ nav ul li a {
     object-fit: contain;
 }
 
-.back-video2{
-    display: hidden;
-    opacity: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -2;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
 #home-section .content {
     z-index: 1;
     color: white; /* Adjust text color as needed */
@@ -321,7 +310,7 @@ nav ul li a {
 }
 
 .hero h1,h2{
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Rubik Doodle Shadow', sans-serif;
     color: transparent;
     background: linear-gradient(45deg, #ff8a00, #e52e71); 
     -webkit-text-stroke:1px #fff ;
@@ -340,17 +329,11 @@ nav ul li a {
     text-align: left;
     background-color: rgba(7, 6, 6, 0.6);
     padding-top: 50px;
-    padding-bottom: 70px;
-    opacity: 0;
-    transition: opacity 1s ease;
+    padding-bottom: 20px;
     margin-bottom: 100px;
     
 }
 
-#section-2.fade-in {
-    opacity: 1;
-    transition: opacity 1s ease;
-}
 
 #section-2::after{
     z-index: -1;
@@ -430,14 +413,59 @@ nav ul li a {
 }
 
 #section-3{
-    transition: opacity 1s ease;
-    opacity: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-#section-3.fade-in {
-    opacity: 1;
-    transition: opacity 1s ease;
+.btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    max-width:80%;
+    border-radius:35px;
+    padding: 30px;
 }
+.btn-group button {
+    flex: 1;
+    background: #121212;
+    border: 1px solid rgb(221, 178, 4); 
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    width: 30vw; 
+    line-height: 2px;
+  }
+
+  .btn-group button h6{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Poppins',sans-serif;
+  }
+
+  .btn-group button p{
+    font-family: 'Poppins',sans-serif;
+    font-size: 1rem;
+  }
+
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  .btn-group button:hover {
+    
+    background: linear-gradient(45deg, #ff8a00, #d50f75);
+  }
+
+
 
 #section-4 .heading h5{
     font-family: 'Croissant One', sans-serif;
@@ -458,10 +486,6 @@ nav ul li a {
     opacity: 0;
     transition: opacity 1s ease;
     line-height: 5px;
-}
-#section-4.fade-in {
-    opacity: 1;
-    transition: opacity 1s ease;
 }
 
 .carousel-inner{

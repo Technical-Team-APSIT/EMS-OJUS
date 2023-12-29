@@ -16,6 +16,8 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    user-select: none;
+    place-items: center;
 }
 body::-webkit-scrollbar {
     width: 0px;
@@ -306,4 +308,117 @@ footer{
     text-decoration: none;
 }
 
+:root {
+    --background:#f3f1f9;
+    --toast-background: #292B2D;
+    --toast-success: #f5936c;
+    --text: white;
+}
+.notification {
+    position: absolute;
+    top: 32px;
+    align-items: center;
+    border-radius: 6px;
+    background-color: var(--toast-background);
+    color: var(--text);
+    max-width: 400px;
+    width: 100%;
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 3s linear;
+    border-radius: 12px;
+}
+
+.notification__description {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 1rem;
+    flex-grow: 2;
+}
+
+.notification__icon {
+    height: 26px;
+    width: 26px;
+    margin-right: 4px;
+}
+
+.notification__body {
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+}
+
+.notification__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    margin-left: 20px;
+    flex-grow: 1;
+    color: var(--toast-success);
+}
+
+.notification__button:hover {
+    text-decoration: underline;
+}
+
+
+.notification__progress {
+    position: absolute;
+    right: 8px;
+    bottom: 4px;
+    width: calc(100% - 16px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    background: linear-gradient(
+        to right, 
+        var(--toast-background),  
+        var(--toast-success)
+    );
+    border-radius: inherit;
+    animation: progress 2.5s 0.3s linear;
+}
+
+.icon__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--toast-success);
+    margin-right: 8px;
+    padding: 6px;
+}
+
+.icon__wrapper svg {
+    stroke: var(--toast-background);
+    stroke-width: 3px;
+}
+
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    95% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progress {
+    to {
+        transform: scaleX(1);
+    }
+}
 
