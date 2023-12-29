@@ -637,7 +637,7 @@ footer{
     }
 
   
-    #button {
+    #goUp {
         display: inline-block;
         background-color:#fd8309;
         width: 50px;
@@ -654,24 +654,24 @@ footer{
         z-index: 1000;
       }
       
-      #button i{
+      #goUp i{
         font-size:32px;
         color:white;
       }
       
       
       
-      #button:hover {
+      #goUp:hover {
         cursor: pointer;
         background-color: #333;
       }
       
-      #button.show {
+      #goUp.show {
         opacity: 1;
       }
 
       @media (min-width: 760px) {
-        #button {
+        #goUp {
           margin: 30px;
         }
       }
