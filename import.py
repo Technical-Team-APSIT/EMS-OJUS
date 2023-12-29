@@ -4,6 +4,7 @@ import os
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.utils import timezone
+from django.contrib.auth.hashers import make_password
 
 project_dir = "/EMS/core/"
 sys.path.append(project_dir)
@@ -13,31 +14,34 @@ django.setup()
 
 User = get_user_model()
 
-file = 'RandomData.csv'
+file = 'data.csv'
 
 data = csv.reader(open(file), delimiter=",")
 for row in data:
+    pwd = row[1]+row[2]
+    print(f"Username: {row[1]}, Password: {pwd}")
+
     # Use get_or_create to avoid creating duplicate users
     user, created = User.objects.get_or_create(
-        username=row[0],
+        username=row[1],
         defaults={
-            'password': row[3],
+            'password': make_password(pwd),
             'last_login': timezone.now(),
             'is_superuser': False,
-            'fname': row[1],
-            'last_name': row[2],
+            'fname': row[2],
+            'lname': row[4],
             'is_staff': True,
             'is_active': True,
             'date_joined': timezone.now(),
-            'dept': row[4],
-            'year': row[5],
-            'moodle_id': row[0],
+            'dept': row[5],
+            'year': row[6],
+            'moodle_id': row[1],
         }
     )
 
     if not created:
         # User already existed, update fields
-        user.password = row[3]
+        user.set_password(pwd)  # Use set_password method
         user.last_login = timezone.now()
         user.fname = row[1]
         user.lname = row[2]

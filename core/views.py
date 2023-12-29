@@ -5,6 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Event, Signed, Rule
 from datetime import date
+from django.contrib.auth import get_user_model
+from django.db.models import Q
+from datetime import datetime, date
+
+
+
 
 
 
@@ -14,12 +20,16 @@ from datetime import date
 def index(request):
     user = request.user
     events = Event.objects.prefetch_related('eventhead_set').all()
-    
+
     context = {
         'events' : events,
         'user' : user,
+        
     }
     return render(request, 'core/index.html', context)
+
+
+
 
 def eventDetails(request,slug):
     user = request.user
@@ -41,19 +51,22 @@ def schedule(request):
     day2 = Event.objects.filter(date=date(2024, 1, 4))
     day3 = Event.objects.filter(date=date(2024, 1, 5))
     day4 = Event.objects.filter(date=date(2024, 1, 6))
+    day5 = Event.objects.filter(date=date(2024, 1, 7))
+
 
     context = {
         'day1': day1,
         'day2': day2,
         'day3': day3,
         'day4': day4,
+        'day5': day5,
         'user': user,
     }
     return render(request, 'core/schedule.html', context)
 
 def myEvents(request):
     user = request.user
-    signed = Signed.objects.filter(participant=user)
+    signed = Signed.objects.filter(Q(participant=user) | Q(participant2=user))
     context = {
         'user' : user,
         'signed': signed,
@@ -61,8 +74,11 @@ def myEvents(request):
     return render(request, 'core/my-events.html', context)
 
 
+User = get_user_model()
+
 def loginUser(request):
     page = 'login'
+
     if request.user.is_authenticated:
         return redirect('index')
 
@@ -72,16 +88,17 @@ def loginUser(request):
 
         try:
             user = User.objects.get(moodle_id=moodle_id)
-        except:
+        except User.DoesNotExist:
             messages.error(request, 'User does not exist')
+            return render(request, 'core/login.html', {'page': page})
 
-        user = authenticate(request, moodle_id=moodle_id, password=password)
+        authenticated_user = authenticate(request, moodle_id=moodle_id, password=password)
 
-        if user is not None:
-            login(request, user)
+        if authenticated_user is not None:
+            login(request, authenticated_user)
             return redirect('index')
         else:
-            messages.error(request, 'Moodle id OR password does not exit')
+            messages.error(request, 'Moodle id or password does not exist')
 
     context = {'page': page}
     return render(request, 'core/login.html', context)
@@ -94,22 +111,53 @@ def logoutUser(request):
 
 
 @login_required(login_url='login')
-def registerEvent(request, slug):
-    event = Event.objects.get(slug=slug)
+def regForm(request, slug):
+    event = get_object_or_404(Event, slug=slug)
     user = request.user
-    
-    
-    Signed.objects.get_or_create(
-            participant = user,
-            event = event,
-            fname = user.fname,
-            lname = user.lname,
-            dept = user.dept, 
-            year = user.year,
-            ename = event.name
 
-        )
+    if request.method == 'POST':
+        if event.is_doubles:
+            a = request.POST.get('moodle_id2')
+            u2 = User.objects.get(moodle_id=a)
+            try:
+                signed_obj, created = Signed.objects.get_or_create(
+                    participant=user,
+                    event=event,
+                    participant2=u2,
+                    pname1=request.POST.get('pname1'),
+                    pname2=request.POST.get('pname2'),
+                    dept=user.dept,
+                    year=user.year,
+                    ename=event.name
+                )
+                if not created:
+                    messages.warning(request, f'You are already registered for the {event.name}.')
+            except User.DoesNotExist:
+                messages.warning(request, f'User with id {u2} does not exist')
+        else:
 
-    return HttpResponse(f'Signed up sucessfully for'+ event.name)
+                signed_obj, created = Signed.objects.get_or_create(
+                    participant=user,
+                    event=event,
+                    pname1=request.POST.get('pname1'),
+                    dept=user.dept,
+                    year=user.year,
+                    ename=event.name
+                )
+                if not created:
+                    messages.warning(request, f'You are already registered for the {event.name}.')
+            
+
+        return redirect('my-events', slug=slug)
+
+    context = {
+        'user': user,
+        'event': event,
+    }
+
+    return render(request, 'core/regForm.html', context)
+
+
+
 
 # Create your views here.

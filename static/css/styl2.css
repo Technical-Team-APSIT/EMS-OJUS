@@ -15,6 +15,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    user-select: none;
 }
 body::-webkit-scrollbar {
     width: 0px;
@@ -44,6 +45,7 @@ body::before {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    
 }
 
 #home-section::before {
@@ -112,112 +114,27 @@ nav ul li a {
     opacity: 0;
 }
 
-@media screen and (max-width: 760px) {
-    #home-section{
-        max-height: 80vh;
-    }
-
-    nav {
-        flex-direction: row;
-    }
-    
-    nav ul {
-        border-radius: 15px;
-        flex-direction: column;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.8);
-        position: absolute;
-        justify-self: center;
-        top: 60px;
-        right: 0;
-        transform: translateX(50%);
-        width: 100%;
-        display: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease-in-out, opacity 0.5s ease;
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    
-    
-    nav ul li:last-child {
-        border-bottom: none;
-    }
-    
-    nav ul.show {
-        display: flex;
-        transform: translateY(0);
-        opacity: 1;
-    }
-    
-    nav ul li {
-        margin: 10px 0;
-        opacity: 0;
-        animation: fadeIn 0.5s ease-in-out forwards;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-        padding-bottom: 10px;
-    }
-    
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
-    }
-    
-    .menu-icon.open {
-        transform: rotate(90deg);
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-
-    .menu-icon i{
-        opacity: 1;
-        font-size: 3.5vh;
-        color: white;
-    }
-
-    .hero h1{
-        display: none;
-    }
-    .hero h2{
-        font-size: 10vw;
-    }
-
-    #socials img{
-        max-height: 40px;
-        width: auto;
-    }
-
-    .back-video{
-        display: hidden;
-        opacity: 0;
-    }
-
-    .back-video2{
-        opacity: 1;
-    }
-
-}
-
 .back-video {
+    margin-top: -20px;
     position: absolute;
-    right: 0;
+    right: 0;   
     top: 0;
     z-index: -2;
+    min-height: 100vh;
+    object-fit: cover;
     width: 100%;
-    height: auto;
-    object-fit: contain;
 }
+
+video-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+}
+
+
 
 #home-section .content {
     z-index: 1;
@@ -334,24 +251,12 @@ nav ul li a {
     
 }
 
-
 #section-2::after{
     z-index: -1;
     filter: blur(5px);
 }
 
-.divider {
-    background: linear-gradient(45deg, #ff8a00, #e52e71);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 2em;
-    font-family: 'Russo One', sans-serif;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 50px;
-}
+
 
 .subhead{
     font-family: "Poppins", sans-serif;
@@ -380,28 +285,6 @@ nav ul li a {
     font-size: 4vh;
     color: antiquewhite;
     font-family: 'Poppins', sans-serif;
-}
-
-@media screen and (max-width: 760px) {
-    #section-2 {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
-        text-align: center;
-    }
-
-    #section-2 img {
-        width: 60%;
-        margin-bottom: 10px;
-    }
-
-    #section-2 .description {
-        max-width: 100%;
-        padding: 0px 10px;
-    }
-
-    .blurb{
-        font-size: 50px;
-    }
 }
 
 
@@ -476,15 +359,7 @@ nav ul li a {
     padding:5vw;
 }
 
-.sports-card-sm:hover
-{
-    color: #fff;
-}
-
-
 #section-4 {
-    opacity: 0;
-    transition: opacity 1s ease;
     line-height: 5px;
 }
 
@@ -494,6 +369,18 @@ nav ul li a {
     object-fit: cover;
 }
 
+.divider {
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2em;
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+}
 .gdiv {
     height: 2px;
     background-color: #f8f8f8;
@@ -501,10 +388,7 @@ nav ul li a {
     margin: 10px 0;
 }
 
-#section-3{
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+
 
 footer{
     background-color:rgba(0, 0, 0, 0.8);
@@ -531,8 +415,8 @@ footer{
     text-align: center;
 }
 .footer-content h3{
-    font-size: 1.8rem;
-    font-weight: 800;
+    font-size: 1.5rem;
+    font-weight: 600;
     text-transform: capitalize;
     line-height: 3rem;
     color: #f0f0f0;
@@ -563,7 +447,7 @@ footer{
     color: #fff;
 }
 .socials a i{
-    font-size: 30px;
+    font-size: 25px;
     transition: color .4s ease;    
 }
 .socials a:hover i#insta{
@@ -615,6 +499,91 @@ footer{
         #home-section::after {
             height: 15px;
         }
+
+        #home-section{
+            max-height: 100vh;
+        }
+    
+        nav {
+            flex-direction: row;
+        }
+        
+        nav ul {
+            border-radius: 15px;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            justify-self: center;
+            top: 100px;
+            right: 0;
+            transform: translateX(50%);
+            width: 100%;
+            display: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        
+        
+        nav ul li:last-child {
+            border-bottom: none;
+        }
+        
+        nav ul.show {
+            display: flex;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        nav ul li {
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 10px;
+        }
+        
+        .menu-icon {
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .menu-icon.open {
+            transform: rotate(90deg);
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+    
+        .menu-icon i{
+            opacity: 1;
+            font-size: 3.5vh;
+            color: white;
+        }
+    
+        .hero h1{
+            display: none;
+        }
+        .hero h2{
+            font-size: 10vw;
+        }
+    
+        #socials img{
+            max-height: 40px;
+            width: auto;
+        }-
     
         .hero h1 {
             font-size: 20vw;
@@ -636,6 +605,26 @@ footer{
             display: hidden;
         }
 
+        #section-2 {
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;
+            text-align: center;
+        }
+    
+        #section-2 img {
+            width: 60%;
+            margin-bottom: 10px;
+        }
+    
+        #section-2 .description {
+            max-width: 100%;
+            padding: 0px 10px;
+        }
+    
+        .blurb{
+            font-size: 50px;
+        }
+
         
     }
 
@@ -647,22 +636,42 @@ footer{
         
     }
 
-    video-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    top: 50%;
-    left: 50%;
-}
+  
+    #button {
+        display: inline-block;
+        background-color:#fd8309;
+        width: 50px;
+        height: 50px;
+        line-height:60px;
+        text-align: center;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s, 
+        opacity .5s, visibility .5s;
+        opacity: 0;
+        z-index: 1000;
+      }
+      
+      #button i{
+        font-size:32px;
+        color:white;
+      }
+      
+      
+      
+      #button:hover {
+        cursor: pointer;
+        background-color: #333;
+      }
+      
+      #button.show {
+        opacity: 1;
+      }
 
-    
-    @media  (min-aspect-ratio:16/9){
-        .back-video2{
-            object-fit: fill;
-            width: 100%;
-            height: auto;
+      @media (min-width: 760px) {
+        #button {
+          margin: 30px;
         }
-        
-    }
+      }

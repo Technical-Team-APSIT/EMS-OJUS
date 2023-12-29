@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/regform.css' %}" type="text/css">
+
+
+    <div id="back-to-home" onclick="window.location.href='{{ request.META.HTTP_REFERER }}'"><i class="fa-solid fa-caret-left"></i> Back</div>
+
+    </div>
+    </a>
+    <div class="wrapper">
+        <form method='POST'>
+        {% csrf_token %}
+            <h1> {{event.name}} </h1>
+
+            {% if event.is_doubles %}
+            <div class="input-box">
+                <input type="text" id="pname1" name="pname1"  placeholder="Participant 1" value="{{user.fname}} {{user.lname}}" required >
+            </div>
+                        <div class="input-box">
+                <input type="text" id="pname2" name="pname2"  placeholder="Participant 2" required >
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="moodle_id2" name="moodle_id2"  placeholder="Moodle ID for participant 2" required >
+            </div>
+
+            <div class="input-box">
+                <input type="text"   placeholder="Department" value="{{user.dept}}" required >
+            </div>
+            <div class="input-box">
+                <input type="text"   placeholder="Year" value="{{user.year}}" required >
+            </div>
+
+            {% else %}
+
+                        <div class="input-box">
+                <input type="text" id="pname1" name="pname1"  placeholder="Participant 1" value="{{user.fname}} {{user.lname}}" required >
+            </div>
+
+            <div class="input-box">
+                <input type="text"   placeholder="Department" value="{{user.dept}}" required >
+            </div>
+            <div class="input-box">
+                <input type="text"   placeholder="Year" value="{{user.year}}" required >
+            </div>
+
+            {% endif %}
+            
+            <div class="submit">
+                <button type="submit" class="btn" >Login</button>
+            </div>
+        </form>
+    </div>
+    
+    <script> 
+        const inputIcon = document.querySelector(".input__icon");
+        const inputPassword = document.querySelector(".password");
+
+        inputIcon.addEventListener("click", () => {
+        inputIcon.classList.toggle("ri-eye-off-line");
+        inputIcon.classList.toggle("ri-eye-line");
+        inputPassword.type = inputPassword.type === "password" ? "text" : "password";
+        });
+
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var windowHeight = window.innerHeight;
+    var numberOfLines = Math.floor(windowHeight / 120);
+
+    var slidingText = document.querySelector('.sliding-text');
+    slidingText.style.left = '-100%';
+    slidingText.style.top = 'calc(50% - ' + (numberOfLines * 65) + 'px)';
+    slidingText.style.animationDuration = numberOfLines * 4 + 's';
+    slidingText.style.animationIterationCount = 'infinite';
+});
+
+
+</script>
+
+{% endblock %}

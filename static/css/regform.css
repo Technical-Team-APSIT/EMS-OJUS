@@ -1,3 +1,53 @@
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+
+nav ul li a:hover{
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    font-weight: 650;
+}
+
+nav {
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    padding: 5px 5% 5px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    z-index: 98;
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav ul li {
+    list-style :none;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    color: #fffffffe;
+    font-size: 22px;
+    font-weight: 650;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Croissant+One&family=Gasoek+One&family=Lobster&family=Lora:ital,wght@1,500&family=Notable&family=Open+Sans:wght@300;400&family=Play&family=Poppins:wght@300&family=Rajdhani:wght@300;700&display=swap');
 
@@ -224,4 +274,46 @@ body::before {
     .sliding-text{
         font-size: 75px;
     }
+}
+
+.menu-icon i{
+    display: hidden;
+    opacity: 0;
+}
+
+#back-to-home {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, #ff8a00, #d50f75); 
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fffffffe;
+    font-size: 16px;
+    margin-bottom: 10px;
+    z-index: 99;
+  }
+
+
+body{
+    position: relative;
+    background-image: url("../static/assets/doodles-bg.png");
+    background-repeat: repeat;
+    background-size: 700px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Adjust the alpha channel for darkness (0.9 for 90% opacity) */
+    z-index: -1;
 }
