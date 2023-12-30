@@ -6,10 +6,10 @@ with open(BASE_DIR / 'secret_key.txt') as f:
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['ojus.eventsapsit.org', '127.0.0.1']
+ALLOWED_HOSTS = ['ojussports.eventsapsit.org', '127.0.0.1']
 
 
-# CSRF_TRUSTED_ORIGINS = ['https://www.ojus.eventsapsit.org', 'http://www.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://www.ojussports.eventsapsit.org']
 
 
 MEDIA_ROOT = BASE_DIR / 'media'
