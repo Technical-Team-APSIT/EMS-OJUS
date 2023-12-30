@@ -1,7 +1,7 @@
 asgiref==3.7.2
 defusedxml==0.7.1
 diff-match-patch==20230430
-Django==5.0
+Django
 django-appconf==1.0.6
 django-compressor==4.4
 django-favicon==0.1.4
