@@ -4,8 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<str:event_date>', views.index, name='filtered'),
+
     path('team', views.credits, name='team'),
 
 
@@ -17,6 +16,10 @@ urlpatterns = [
 
     path('register/<slug:slug>', views.regForm, name='reg'),
     path('event/<slug:slug>', views.eventDetails, name='details'),
+
+
+    path('', views.index, name='index'),
+    path('<str:event_date>', views.index, name='filtered'),
 
 
     
