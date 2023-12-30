@@ -303,7 +303,6 @@ video-container {
     display: flex;
     flex-wrap: wrap;
     max-width:80%;
-    border-radius:35px;
     padding: 30px;
 }
 .btn-group button {
@@ -315,6 +314,12 @@ video-container {
     cursor: pointer;
     width: 30vw; 
     line-height: 2px;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-group button:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
 
   .btn-group button h6{
@@ -330,20 +335,27 @@ video-container {
 
   .btn-group:after {
     content: "";
-    clear: both;
-    display: table;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   }
   
   .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
-  }
+    border-right: 1px solid rgb(221, 178, 4); 
+}
+
+.btn-group button:nth-child(3) {
+    border-right: 1px solid rgb(221, 178, 4); 
+}
   .btn-group button:hover {
-    
     background: linear-gradient(45deg, #ff8a00, #d50f75);
   }
 
+  #button1{
+    border-radius: 15px 0 0 15px;
+  }
 
+  #button5{
+    border-radius: 0 15px 15px 0;
+  }
 
 #section-4 .heading h5{
     font-family: 'Croissant One', sans-serif;
@@ -578,7 +590,7 @@ footer{
         #socials img{
             max-height: 40px;
             width: auto;
-        }-
+        }
     
         .hero h1 {
             font-size: 20vw;
@@ -613,7 +625,20 @@ footer{
             font-size: 50px;
         }
 
+        #button1{
+            border-radius: 15px 0 0 0;
+        }
+
+        #button3{
+            border-radius: 0 15px 0 0;
+        }
         
+        #button4{
+            border-radius: 0 0 0 15px;
+        }
+        #button5{
+            border-radius: 0 0 15px 0;
+        }
     }
 
     .gradientText{
