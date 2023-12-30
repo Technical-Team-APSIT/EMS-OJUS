@@ -4,7 +4,6 @@ diff-match-patch==20230430
 Django==5.0
 django-appconf==1.0.6
 django-compressor==4.4
-django-favicon==0.1.4
 django-import-export==3.3.5
 django-uuidfield==0.5.0
 et-xmlfile==1.1.0

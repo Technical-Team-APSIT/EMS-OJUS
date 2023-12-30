@@ -27,6 +27,8 @@ class Event(models.Model):
     date = models.DateField()
     time = models.TimeField()
     is_doubles = models.BooleanField(default = False)
+    is_team = models.BooleanField(default = False)
+
     img = models.ImageField(upload_to='images', null=True, blank=True, default='logo.png')
     slug = models.SlugField(default="", null=False)
 

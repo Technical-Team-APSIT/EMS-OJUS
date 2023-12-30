@@ -43,6 +43,7 @@ h1{
     padding: 20px;
     grid-gap: 40px;
     margin-top: 100px;
+    min-height: 100%;
 }
 .card{
     background-color: #1c1b29;

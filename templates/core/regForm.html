@@ -15,6 +15,12 @@
     </div>
     </a>
     <div class="wrapper">
+
+    {% if event.is_team %}
+
+    <h1> Sign Up via your Team Manager </h1>
+
+    {% else %}
         <form method='POST'>
         {% csrf_token %}
             <h1> {{event.name}} </h1>
@@ -57,6 +63,7 @@
                 <button type="submit" class="btn" >Login</button>
             </div>
         </form>
+        {% endif %}
     </div>
     
     <script> 
