@@ -14,7 +14,6 @@ MarkupPy==1.14
 odfpy==1.4.1
 openpyxl==3.1.2
 Pillow==10.1.0
-psycopg2==2.9.9
 PyYAML==6.0.1
 rcssmin==1.1.1
 rjsmin==1.2.1
