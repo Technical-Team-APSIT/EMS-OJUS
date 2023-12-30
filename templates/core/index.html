@@ -97,6 +97,30 @@
 </div>
 
 
+        <div class="btn-group">
+            <button onclick="window.location.href='{% url 'filtered' '2024-01-03' %}'">
+                <h6>DAY 1</h6>
+                <p>3 JAN</p>
+            </button>
+            <button onclick="window.location.href='{% url 'filtered' '2024-01-04' %}'">
+                <h6>DAY 2</h6>
+                <p>4 JAN</p>
+            </button>
+            <button onclick="window.location.href='{% url 'filtered' '2024-01-05' %}'">
+                <h6>DAY 3</h6>
+                <p>5 JAN</p>
+            </button>
+            <button onclick="window.location.href='{% url 'filtered' '2024-01-06' %}'">
+                <h6>DAY 4</h6>
+                <p>6 JAN</p>
+            </button>
+            <button onclick="window.location.href='{% url 'filtered' '2024-01-07' %}'">
+                <h6>DAY 5</h6>
+                <p>7 JAN</p>
+            </button>
+          </div>
+
+
         <div class="card-wrapper">
             <div class="ag-format-container">
                 <div class="ag-courses_box">
@@ -188,7 +212,7 @@
             </ul>
         </div>
         <div class="footer-bottom">
-            <p>copyright &copy;2024 Ojus. designed by <span><a href="#">Ojus tech team👨‍💻</a></span></p>
+            <p>copyright &copy;2024 Ojus. designed by <span><a href="{% url 'team' %}">Ojus tech team👨‍💻</a></span></p>
         </div>
 
         </footer></div>

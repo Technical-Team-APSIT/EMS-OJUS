@@ -17,9 +17,12 @@ from datetime import datetime, date
 
 
 
-def index(request):
+def index(request, event_date= None):
     user = request.user
-    events = Event.objects.prefetch_related('eventhead_set').all()
+    if event_date:
+        events = Event.objects.prefetch_related('eventhead_set').filter(date= event_date)
+    else:
+        events = Event.objects.prefetch_related('eventhead_set').all()
 
     context = {
         'events' : events,
@@ -27,6 +30,10 @@ def index(request):
         
     }
     return render(request, 'core/index.html', context)
+
+
+def credits(request):
+    return render (request,'core/credits.html')
 
 
 
