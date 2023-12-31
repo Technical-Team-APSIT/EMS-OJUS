@@ -12,9 +12,11 @@ import os, sys
 sys.path.append('/home/meetjamsutkar645_apsit_edu_in/EMS')
 
 # add the virtualenv site-packages path to the sys.path
+sys.path.append('/home/meetjamsutkar645_apsit_edu_in/EMS')
+
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'EMS.settings.dev')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'EMS.settings.prod')
 
 application = get_wsgi_application()
