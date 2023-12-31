@@ -7,7 +7,11 @@ For more information on this file, see
 https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
 """
 
-import os
+import os, sys
+# add the hellodjango project path into the sys.path
+sys.path.append('/home/meetjamsutkar645_apsit_edu_in/EMS')
+
+# add the virtualenv site-packages path to the sys.path
 
 from django.core.wsgi import get_wsgi_application
 
