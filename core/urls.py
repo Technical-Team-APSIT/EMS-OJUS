@@ -19,7 +19,7 @@ urlpatterns = [
 
 
     path('', views.index, name='index'),
-    path('<str:event_date>', views.index, name='filtered'),
+    path('date/<str:event_date>', views.index, name='filtered'),
 
 
     
