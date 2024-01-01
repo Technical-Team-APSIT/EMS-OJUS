@@ -9,7 +9,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['ojussports.eventsapsit.org', '127.0.0.1']
 
 
-CSRF_TRUSTED_ORIGINS = ['https://ojussports.eventsapsit.org','http://ojussports.eventsapsit.org']
+CSRF_TRUSTED_ORIGINS = ['https://www.ojussports.eventsapsit.org','http://www.ojussports.eventsapsit.org']
 
 
 MEDIA_ROOT = BASE_DIR / 'media'
