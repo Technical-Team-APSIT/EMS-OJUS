@@ -19,6 +19,8 @@ from datetime import datetime, date
 
 def index(request, event_date= None):
     user = request.user
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
     if event_date:
         events = Event.objects.prefetch_related('eventhead_set').filter(date= event_date)
     else:
@@ -27,6 +29,7 @@ def index(request, event_date= None):
     context = {
         'events' : events,
         'user' : user,
+        'nums' : num_visits,
         
     }
     return render(request, 'core/index.html', context)
