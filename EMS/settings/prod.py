@@ -14,6 +14,8 @@ CSRF_TRUSTED_ORIGINS = ['https://www.ojussports.eventsapsit.org']
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
+STATIC_ROOT = '/var/www/mysite/static/'
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
