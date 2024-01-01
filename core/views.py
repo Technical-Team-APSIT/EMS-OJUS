@@ -132,7 +132,7 @@ def regForm(request, slug):
             # Check if the user is already registered for any event of that type
             existing_registration = Signed.objects.filter(participant=user, event__is_doubles=False).first()
             if existing_registration:
-                return redirect('error')
+                return redirect()
 
             signed_obj, created = Signed.objects.get_or_create(
                 participant=user,
@@ -163,7 +163,7 @@ def regForm(request, slug):
             except User.DoesNotExist:
                 messages.warning(request, f'User with id {u2} does not exist')
 
-        return redirect('my-events', slug=slug)
+        return redirect('my-events')
 
     context = {
         'user': user,
