@@ -46,6 +46,9 @@ class eventHead(models.Model):
     contact = models.BigIntegerField(null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return str(f""+self.event.name+"_"+self.name+"")    
+
 class Signed(models.Model):
     participant = models.ForeignKey(User, on_delete=models.CASCADE, related_name='p1')
     participant2 = models.ForeignKey(User, on_delete=models.CASCADE, blank = True, null = True, related_name = 'p2')
