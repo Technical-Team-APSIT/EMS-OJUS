@@ -53,9 +53,9 @@
 <body>
     <div class="frem">
         <p>404</p>
-        <h2>Page not found</h2>
+        <h2>You already signed up for an event</h2>
         <h5>error...!</h5>
-        <a href="{{ request.META.HTTP_REFERER }}">Home</a>
+        <a href="{% url 'index' %}">Home</a>
     </div>
 </body>
 
