@@ -117,6 +117,9 @@ def logoutUser(request):
     return redirect('index')
 
 
+def error(request):
+    return render(request, '404.html')
+
 @login_required(login_url='login')
 def regForm(request, slug):
     event = get_object_or_404(Event, slug=slug)

@@ -21,6 +21,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('date/<str:event_date>', views.index, name='filtered'),
 
+    path('error', views.error, name='error'),
+
 
     
 ]
