@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="{% static 'css/regform.css' %}" type="text/css">
 
 
-    <div id="back-to-home" onclick="window.location.href='{{ request.META.HTTP_REFERER }}'"><i class="fa-solid fa-caret-left"></i> Back</div>
+    <div id="back-to-home" onclick="window.location.href='{% url 'details' event.slug %}'"><i class="fa-solid fa-caret-left"></i> Back</div>
 
     </div>
     </a>
