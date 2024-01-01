@@ -10,7 +10,7 @@
 
 
     <section>
-    <div id="back-to-home" onclick="window.location.href='{{ request.META.HTTP_REFERER }}'"><i class="fa-solid fa-caret-left"></i> Back</div>
+    <div id="back-to-home" onclick="window.location.href='{% 'index' %}'"><i class="fa-solid fa-caret-left"></i> Back</div>
     <div class="events">
         <div class="main-img">
             <img src="{{events.img.url}}" alt="">
