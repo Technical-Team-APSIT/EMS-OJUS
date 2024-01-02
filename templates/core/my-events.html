@@ -5,31 +5,9 @@
 {% load static %}
  
     <link rel="stylesheet" href="{% static 'css/myevents.css' %}">
-    
-    
-
-<nav>
-            <a href="{% url 'index' %}"><img alt="logo" src="{% static 'assets/logo.png' %}" class="logo"></a>
-            <ul>
-             <li><a href="{% url 'index'%}">EVENTS</a></li>
-             <li><a href="{% url 'schedule' %}">SCHEDULE</a></li>
-             {% if request.user.is_authenticated %}
-             
-             <li><a href="{% url 'my-events' %}">YOUR EVENTS</a></li>
-             <li><a href="{% url 'logout' %}"> LOGOUT </a></li>
-
-             {% else %}
-
-             <li><a href="{% url 'login' %}">LOGIN</a></li>
-             
-             {% endif %}
-            </ul>
-         </nav>
-
-        
+    <div id="back-to-home" onclick="window.location.href='{{ request.META.HTTP_REFERER }}'"><i class="fa-solid fa-caret-left"></i> Back</div>
 
     <div class="cards">
-
     {% for s in signed %}
         <div class="card card1">
             <div class="container">
@@ -66,6 +44,5 @@
         </div>
 
         </footer>
-    
     {% endblock %}
 

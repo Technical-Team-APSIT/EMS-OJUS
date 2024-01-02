@@ -46,10 +46,10 @@ body::before {
   cursor: pointer;
   color: #fffffffe;
   font-size: 16px;
+  font-weight: 700;
   margin-bottom: 10px;
   z-index: 99;
 }
-
 .timeline {
   max-width: 1050px;
   width: 90%;

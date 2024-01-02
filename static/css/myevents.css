@@ -34,30 +34,47 @@ body::before {
     z-index: -2;
 }
 
-h1{
-    color: crimson;
-}
+#back-to-home {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, #ff8a00, #d50f75); 
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fffffffe;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    z-index: 99;
+  }
+
 .cards{
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
-    padding: 20px;
-    grid-gap: 40px;
+    padding: 10px;
+    grid-gap: 30px;
     margin-top: 100px;
-    min-height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 8px;
 }
 .card{
-    background-color: #1c1b29;
+    background-color: #292626;
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.18);
-    max-width: 30vw;
+    max-width: 31.5%;
     height: auto;
 }
 .container{
     position: relative;
+    align-items: center;
     clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
 }
-img{
-    width: 100%;
+.card-img{
+    min-width: 100%;
     display: block;
     border-radius: 20px 20px 0 0;
 }
@@ -70,27 +87,21 @@ img{
     left: 0;
     border-radius: 20px 20px 0 0;
     opacity: 0.7;
+
 }
-.card1>.container:after{
+.card:nth-child(1n)>.container:after{
     background-image: linear-gradient(
         135deg,
         #0100ec,
         #fb36f4
     );
 }
-.card2>.container:after{
-    background-image: linear-gradient(
-        135deg,
-        #2bdce3,
-        #42ffdb
-    );
+.card:nth-child(2n)>.container:after {
+    background-image: linear-gradient(135deg,#2bdce3, #42ffdb);
 }
-.card3>.container:after{
-    background-image: linear-gradient(
-        135deg,
-        #ffab1d,
-        #f8501c
-    );
+
+.card:nth-child(3n)>.container:after {
+    background-image: linear-gradient(135deg,#ffab1d, #f8501c);
 }
 .details{
     padding: 20px 10px;
@@ -159,21 +170,35 @@ footer{
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
+    padding-right: 40px;
 }
 .socials li{
-    margin: 0 10px;
+    margin: 0 15px;
 }
 .socials a{
     text-decoration: none;
     color: #fff;
 }
 .socials a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
-
+    font-size: 25px;
+    transition: color .4s ease;    
 }
-.socials a:hover i{
-    color: aqua;
+.socials a:hover i#insta{
+    background: -webkit-radial-gradient(33% 100% circle, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.socials a:hover i#yt{
+    color: #cd201f;
+}
+.socials a:hover i#fb{
+    transform: scale(1.1); /* Increase the scale as needed */
+    color: #1877f2;
+}
+.socials a:hover i#ldn{
+    transform: scale(1.1); /* Increase the scale as needed */
+    color: #0077B5;
 }
 
 .footer-bottom{
@@ -194,145 +219,35 @@ footer{
     text-transform: uppercase;
     opacity: 0.6;
     font-weight: 1000;
-    /* color: crimson; */
     text-decoration: none;
 }
 
-nav {
-    width: 100%;
-    position: absolute;
-    margin-top: 10px;
-    display: inline-block;
-    top: 0;
-    left: 0;
-    padding: 0px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-
-.logo{
-    width: 100px;
-    border-radius: 50%;
-    top: 0;
-    right: 0;
-    padding: 5px;
-    background-color: #070606;
-    box-shadow: 10px 10px 20px black;
-}
-
-.logo img {
-    max-width: 80px;
-    height: auto;
-    display: block;
-    
-}
-
-nav ul li {
-    list-style :none;
-    display: inline-block;
-    margin-right: 40px;
-}
-
-nav ul li a {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    text-decoration: none;
-    color: #fffffffe;
-    font-size: 22px;
-    font-weight: 650;
-}
-
-nav ul li a:hover{
-    text-decoration: none;
-    background: linear-gradient(45deg, #ff8a00, #e52e71);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 22px;
-    font-weight: 650;
-}
-.back-video {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -2;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-#home-section .content {
-    z-index: 1;
-    color: white; /* Adjust text color as needed */
-}
-
-#socials{
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
+@media screen and (max-width: 760px) {
+    body{
+        background-size: 500px;
+    }
+    .cards{
         display: flex;
-        gap: 10px;
+        flex-direction: column;
         align-items: center;
     }
-
-    #socials p{
-        font-family: 'Poppins', sans-serif;
-        font-size: 1rem;
-        color:white;
-        text-align: center;
+    .card{
+        max-width: 80vw;
+        height: auto;
+    }
+    .container{
+        position: relative;
+        clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
+    }
+    img{
+        width: 100%;
+        display: block;
+        border-radius: 20px 20px 0 0;
+    }
+    h3{
+        font-size: 10px;
     }
 
-
-    .icons{
-        display: inline-flex  ;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .icons a img{
-        width: 50px;
-        height: 50px;
-        transition: tranform 0.3s ease;
-    }
-
-    .icons a img:hover{
-       transform: scale(1);
-    }
-
-.logo{
-    width: 100px;
-    border-radius: 50%;
-    top: 0;
-    right: 0;
-    padding: 5px;
-    background-color: #070606;
-    box-shadow: 10px 10px 20px black;
-}
-
-.logo img {
-    max-width: 80px;
-    height: auto;
-    display: block;
     
 }
-
-.header{
-    max-height:80px;
-    align-items: center;
-}
-nav {
-    width: 100%;
-    position: absolute;
-    margin-top: 10px;
-    display: inline-block;
-    top: 0;
-    left: 0;
-    padding: 0px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
