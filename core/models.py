@@ -54,7 +54,7 @@ class Signed(models.Model):
     participant = models.ForeignKey(User, on_delete=models.CASCADE, related_name='p1')
     participant2 = models.ForeignKey(User, on_delete=models.CASCADE, blank = True, null = True, related_name = 'p2')
     contact = models.BigIntegerField(null=True)
-    contact2 = models.BigIntegerField(null=True)
+    contact2 = models.BigIntegerField(null=True, blank = True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     dept = models.CharField(max_length=6, null=True)
     year = models.CharField(max_length=6, null=True)
