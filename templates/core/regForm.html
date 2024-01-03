@@ -27,11 +27,19 @@
 
             {% if event.is_doubles %}
             <div class="input-box">
-                <input type="text" id="pname1" name="pname1"  placeholder="Participant 1" value="{{user.fname}} {{user.lname}}" required >
+                <input type="text" id="pname1" name="pname1"  placeholder="Participant 1" value="{{user.fname}}{{user.lname}}" required >
             </div>
                         <div class="input-box">
-                <input type="text" id="pname2" name="pname2"  placeholder="Participant 2" required >
+                <input type="tel" id="contact" name="contact" pattern='[0-9]{10}'  placeholder="Phone Number 1" required >
             </div>
+                        <div class="input-box">
+                <input type="text" id="pname2" name="pname2"  placeholder="Full name of Participant 2" required >
+            </div>
+                        <div class="input-box">
+                <input type="tel" id="contact2" name="contact2" pattern='[0-9]{10}'  placeholder="Phone Number 2" required >
+            </div>
+
+
 
             <div class="input-box">
                 <input type="text" id="moodle_id2" name="moodle_id2"  placeholder="Moodle ID for participant 2" required >
@@ -48,6 +56,10 @@
 
                         <div class="input-box">
                 <input type="text" id="pname1" name="pname1"  placeholder="Participant 1" value="{{user.fname}} {{user.lname}}" required >
+            </div>
+
+                                    <div class="input-box">
+                <input type="tel" id="contact" name="contact" pattern='[0-9]{10}'  placeholder="Phone Number 1" required >
             </div>
 
             <div class="input-box">

@@ -133,20 +133,21 @@ def regForm(request, slug):
     if request.method == 'POST':
         if not event.is_doubles:
             # Check if the user is already registered for any event of that type
-            existing_registration = Signed.objects.filter(participant=user, event__is_doubles=False).first()
-            if existing_registration:
-                return redirect('error')
+                existing_registration = Signed.objects.filter(participant=user, event__is_doubles=False).first()
+                if existing_registration:
+                    return redirect('error')
 
-            signed_obj, created = Signed.objects.get_or_create(
-                participant=user,
-                event=event,
-                pname1=request.POST.get('pname1'),
-                dept=user.dept,
-                year=user.year,
-                ename=event.name
-            )
-            if not created:
-                messages.warning(request, f'You are already registered for the event.')
+                signed_obj, created = Signed.objects.get_or_create(
+                    participant=user,
+                    event=event,
+                    pname1=request.POST.get('pname1'),
+                    dept=user.dept,
+                    year=user.year,
+                    ename=event.name,
+                    contact = request.POST.get('contact'),
+                )
+                if not created:
+                    messages.warning(request, f'You are already registered for the event.')
         else:
             a = request.POST.get('moodle_id2')
             u2 = User.objects.get(moodle_id=a)
@@ -159,7 +160,9 @@ def regForm(request, slug):
                     pname2=request.POST.get('pname2'),
                     dept=user.dept,
                     year=user.year,
-                    ename=event.name
+                    ename=event.name,
+                    contact = request.POST.get('contact'),
+                    contact2 = request.POST.get('contact2'),
                 )
                 if not created:
                     messages.warning(request, f'You are already registered for the {event.name}.')

@@ -28,6 +28,7 @@ class Event(models.Model):
     time = models.TimeField()
     is_doubles = models.BooleanField(default = False)
     is_team = models.BooleanField(default = False)
+    
 
     img = models.ImageField(upload_to='images', null=True, blank=True, default='logo.png')
     slug = models.SlugField(default="", null=False)
@@ -52,10 +53,13 @@ class eventHead(models.Model):
 class Signed(models.Model):
     participant = models.ForeignKey(User, on_delete=models.CASCADE, related_name='p1')
     participant2 = models.ForeignKey(User, on_delete=models.CASCADE, blank = True, null = True, related_name = 'p2')
+    contact = models.BigIntegerField(null=True)
+    contact2 = models.BigIntegerField(null=True)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     dept = models.CharField(max_length=6, null=True)
     year = models.CharField(max_length=6, null=True)
     pname1 = models.CharField(max_length= 200, blank=True)
     pname2 = models.CharField(max_length= 200, blank= True)
     ename = models.CharField(null=True, max_length= 200)
+
 # Create your models here.
