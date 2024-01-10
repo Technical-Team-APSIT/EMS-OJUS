@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'corsheaders',
      #user apps
     'core.apps.CoreConfig',
+    'culturals.apps.CulturalsConfig',
     
 ]
 
