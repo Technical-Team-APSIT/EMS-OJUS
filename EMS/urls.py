@@ -19,13 +19,15 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
+from culturals.views import landing
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('', include('culturals.urls')),
+    path('', landing, name='landing'),
+    path('sports/', include('core.urls')),
+    path('culturals/', include('culturals.urls')),
     
     ]
 
