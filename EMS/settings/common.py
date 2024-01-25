@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'import_export',
     'fontawesomefree',
     'corsheaders',
-     #user apps
+    'qr_code',
+    #user apps
     'core.apps.CoreConfig',
     'culturals.apps.CulturalsConfig',
     

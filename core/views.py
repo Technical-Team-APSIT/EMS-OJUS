@@ -90,7 +90,7 @@ def loginUser(request):
     page = 'login'
 
     if request.user.is_authenticated:
-        return redirect('index')
+        return redirect('landing')
 
     if request.method == 'POST':
         moodle_id = request.POST.get('moodle_id')
@@ -106,7 +106,7 @@ def loginUser(request):
 
         if authenticated_user is not None:
             login(request, authenticated_user)
-            return redirect('index')
+            return redirect('landing')
         else:
             messages.error(request, 'Moodle id or password does not exist')
 
@@ -117,7 +117,7 @@ def loginUser(request):
 @login_required(login_url='login')
 def logoutUser(request):
     logout(request)
-    return redirect('index')
+    return redirect('landing')
 
 
 def error(request):

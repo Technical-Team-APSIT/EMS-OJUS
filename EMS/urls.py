@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from culturals.views import landing
+from core import views
 
 
 
@@ -28,6 +29,9 @@ urlpatterns = [
     path('', landing, name='landing'),
     path('sports/', include('core.urls')),
     path('culturals/', include('culturals.urls')),
+
+    path('login', views.loginUser, name='login'),
+    path('logout', views.logoutUser, name='logout'),
     
     ]
 
