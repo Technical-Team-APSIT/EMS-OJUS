@@ -1,0 +1,49 @@
+{% block content %}
+{% load static %}
+
+<div class="container">
+    <h1>Scan QR Codes</h1>
+    <div class="section">
+        <div id="my-qr-reader"></div>
+        <form id="qrForm" method="POST" action="{% url 'scan' %}">
+            {% csrf_token %}
+            <input type="hidden" id="qr_data" name="decodeResult" value="">
+            <button type="submit" style="display: none;"></button>
+        </form>
+    </div>
+</div>
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function domReady(fn) {
+        if (
+            document.readyState === "complete" ||
+            document.readyState === "interactive"
+        ) {
+            setTimeout(fn, 1000);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+    domReady(function () {
+
+        // If found your qr code
+        function onScanSuccess(decodeText, decodeResult) {
+            alert("QR Data: " + decodeText);
+
+            // Fill the hidden input with the QR data
+            $('#qr_data').val(decodeText);
+
+            // Submit the form
+            document.getElementById('qrForm').submit();
+        }
+
+        let htmlscanner = new Html5QrcodeScanner(
+            "my-qr-reader",
+            { fps: 10, qrbos: 250 }
+        );
+        htmlscanner.render(onScanSuccess);
+    });
+</script>
+{% endblock %}

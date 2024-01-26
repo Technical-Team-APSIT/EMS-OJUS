@@ -15,6 +15,20 @@ def landing(request):
 def culturals(request):
     return render(request, 'culturals/index.html')
 
+def scan(request):
+
+    if request.method == 'POST':
+        mood = request.POST.get('decodeResult')
+        print(mood)
+        entry = GSigned.objects.get(moodle_id=mood)
+        if entry.scanned == False:
+            entry.scanned = True
+            entry.save()
+            messages.success(request, "Entry Valid")
+        else:
+            messages.warning(request, "This code has already been scanned.")
+    return render(request, 'culturals/scanner.html')
+
 @login_required(login_url='login')
 def ghanekar(request):
    
