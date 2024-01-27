@@ -36,24 +36,28 @@ def ghanekar(request):
     existing_registration = GSigned.objects.filter(participant=user)
     if existing_registration:
             signed = True
-            print(signed)
+            
+    total = GSigned.objects.count()
+    print(total)
 
     if request.method == 'POST':
        
             # Check if the user is already registered for any event of that type
+        if total <= 500:
 
-
-        signed_obj, created = GSigned.objects.get_or_create(
-            participant=user,
-            moodle_id = user.moodle_id,
-            pname=request.POST.get('pname'),
-            dept=user.dept,
-            year=user.year,
-            contact = request.POST.get('contact'),
-            scanned = False,
-        )
-        if not created:
-            messages.warning(request, f'Something is wrong with you.')
+            signed_obj, created = GSigned.objects.get_or_create(
+                participant=user,
+                moodle_id = user.moodle_id,
+                pname=request.POST.get('pname'),
+                dept=user.dept,
+                year=user.year,
+                contact = request.POST.get('contact'),
+                scanned = False,
+            )
+            if not created:
+                messages.warning(request, f'Something is wrong with you.')
+        else:
+            messages.error(request, 'Registrations are closed. Please try again next semester.')
 
 
     context = {

@@ -52,6 +52,18 @@
         </form>
         {% endif %}
     </div>
+
+    <script>
+
+     function displayMessages() {
+        {% for message in messages %}
+            alert("{{ message.tags }}: {{ message }}");
+        {% endfor %}
+    }
+
+    // Call the displayMessages function
+    domReady(displayMessages);<
+        </script>
     
 
 
