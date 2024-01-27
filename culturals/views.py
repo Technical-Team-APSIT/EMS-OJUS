@@ -19,7 +19,6 @@ def scan(request):
 
     if request.method == 'POST':
         mood = request.POST.get('decodeResult')
-        print(mood)
         entry = GSigned.objects.get(moodle_id=mood)
         if entry.scanned == False:
             entry.scanned = True

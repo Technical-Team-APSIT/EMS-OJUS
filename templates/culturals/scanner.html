@@ -30,14 +30,25 @@
 
         // If found your qr code
         function onScanSuccess(decodeText, decodeResult) {
-            alert("QR Data: " + decodeText);
+           
 
             // Fill the hidden input with the QR data
             $('#qr_data').val(decodeText);
 
             // Submit the form
             document.getElementById('qrForm').submit();
+			
         }
+
+		    // Display messages in alert window
+    function displayMessages() {
+        {% for message in messages %}
+            alert("{{ message.tags }}: {{ message }}");
+        {% endfor %}
+    }
+
+    // Call the displayMessages function
+    domReady(displayMessages);
 
         let htmlscanner = new Html5QrcodeScanner(
             "my-qr-reader",
