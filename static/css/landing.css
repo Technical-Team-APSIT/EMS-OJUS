@@ -1,0 +1,145 @@
+body {
+    background: #112 url(../static/assets/comm1.png)  center no-repeat;
+    background-size:cover;
+    margin:0;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+#header {
+    text-align: center;
+    padding-top: 30px;
+}
+
+#header img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+}
+
+#content-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#content-images div {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+#content-images img {
+    width: 200px;
+    height: 200px;
+    margin-right: 80px;
+    padding: 15%;
+    object-fit: contain;
+    background: url(../static/assets/logo-bg.png) center center no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    transition: ease-in-out 0.3s;
+    
+}
+
+#content-images p {
+    text-align: center;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 40px;
+    color: #c3af5c;
+}
+
+#content2 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin: 5vh;
+}
+
+#content2 h1{
+    text-align: center;
+    color: #ffd200;
+}
+
+#content2 p {
+    color: antiquewhite;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#content-text2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #header img {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    #content-images {
+        flex-direction: column;
+    }
+    #content-images img {
+        width: 100%;
+        margin-left: -45px;
+    }
+
+    #content-container{
+        margin: 5vh;
+    }
+
+    #content-text2{
+        display: none!important;
+    }
+}
+.socials-container {
+    margin-top: 10px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-right: 40px;
+}
+
+.socials li {
+    margin: 0 15px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+    transition: ease-in-out 0.1s;
+}
+
+.socials a:hover {
+    color: #ffad00;
+}
+
+.socials a i {
+    font-size: 35px;
+    transition: ease-in-out 0.3s;
+}
+
+.socials a i:hover {
+    color: linear-gradient(to right, #f7971e, #ffd200);
+    transform: scale(1.3);
+    transition: ease-in-out 0.3s;
+}

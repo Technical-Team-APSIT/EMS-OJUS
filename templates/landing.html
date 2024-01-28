@@ -1,6 +1,38 @@
+{% extends 'base.html' %}
+
 {% block content %}
 {% load static %}
 
-Hi Hello
+
+<body>
+
+<link rel="stylesheet" href="{% static "css/landing.css" %}">
+    <div id="header">
+        <img src="{% static "assets/ojus_head.png" %}" alt="logo">
+    </div>
+
+    <div id="content-container">
+        <div id="content-images">
+            <div>
+                <p><b>Cultural</b></p>
+                <div class="image-bg">
+                <a href="{% url "cultural" %}" alt=""><img src="{% static "assets/atwlogo.png" %}" alt="Image 1" id="img1"></a>
+                </div>
+            </div>
+            <div id="content-text2">
+                <div id="content2">
+                    <h1>About Us</h1>
+                    <p>OJUS - Radiance of Euphoria is an intercollegiate festival hosted annually by the students of APSIT. It's an amalgamation of Sports, Literature & Cultural festival comprising of intellectual as well as fun & creative events with a variety of games and entertainment shows. It's not just a festival of various colorful events but a platform where students freely express themselves and our hidden gems come out with their talents.</p>
+                </div>
+            </div>
+            <div>
+                <p><b>Sports</b></p>
+                <div class="image-bg">
+                <a href="{% url 'index' %}"> <img src="{% static "assets/ojus_sports.png" %}" alt="Image 2" id="img2"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 {% endblock %}
