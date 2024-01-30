@@ -160,3 +160,21 @@
   display: inline-block;
   font-family: Cardo;
 }
+
+
+#back-to-home {
+    font-family: Cardo;
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+
