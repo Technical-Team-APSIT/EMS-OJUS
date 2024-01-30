@@ -11,5 +11,32 @@ class GSigned(models.Model):
     scanned = models.BooleanField(default=False)
 
 
+class Event(models.Model):
+    name = models.CharField(null=True, max_length=200)
+    desc = models.TextField(null=True, max_length= 200)
+    venue = models.CharField(null=True, max_length= 200)
+    date = models.DateField()
+    time = models.TimeField()
+
+
+    
+
+    img = models.ImageField(upload_to='images', null=True, blank=True, default='logo.png')
+    slug = models.SlugField(default="", null=False)
+
+
+    def __str__(self):
+        return str(self.name)
+    
+
+class eventHead(models.Model):
+    name = models.CharField(null=True, max_length= 200)
+    contact = models.BigIntegerField(null=True)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(f""+self.event.name+"_"+self.name+"")    
+
+
 
 # Create your models here.
