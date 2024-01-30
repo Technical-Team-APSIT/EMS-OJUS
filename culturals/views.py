@@ -15,6 +15,9 @@ def landing(request):
 def culturals(request):
     return render(request, 'culturals/index.html')
 
+def schedule(request):
+    return render(request, 'culturals/schedule.html')
+
 def scan(request):
 
     if request.method == 'POST':
