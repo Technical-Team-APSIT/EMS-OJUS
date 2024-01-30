@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+@font-face {
+    font-family: "RomansStory";
+    src: url("../static/fonts/RomansStory.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    background-color:rgba(33, 33, 33, 0.9);
+    color:#ffffff;
+    display:block;
+    font: 14px/1.3 Arial,sans-serif;
+    height:50px;
+    position:relative;
+    z-index:5;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.preloader {
+    transition: opacity 2s ease-out;
+    opacity: 1;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Make sure it's not clickable while hidden */
+}
+.preloader video{
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+h2{
+    margin-top: 30px;
+    text-align: center;
+}
+header h2{
+    font-size: 22px;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 80%;
+    text-align: center;
+}
+header a, a:visited {
+    text-decoration:none;
+    color:#fcfcfc;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+    z-index: -2;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:-2;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:-1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    z-index:-1;
+    opacity: 0.4;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+
+.home-section{
+    display: flex;
+    flex-direction: column;
+}
+.logos{
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logos .ROE {
+    color: #fff;
+    font-family: "RomansStory", serif;
+    position: relative;
+    z-index: 100;
+    font-size: 6em;
+    font-weight: 300;
+    margin-top: 0.15em;
+    margin-left: 0.15em;
+    overflow: hidden;
+}
+
+.logos a{
+    text-decoration: none;
+}
+
+
+.culturals-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25vh;
+    height: 5vh;
+    position: absolute;
+    left: 31%;
+}
+
+.themeText h1{
+    position: relative;
+    font-family: "RomansStory",serif;
+    font-size: 3em;
+    overflow: hidden;
+    font-weight: 400;
+    background: linear-gradient(90deg, #000, #e8c371, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    /* margin-top: 30vw; */
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+  }
+
+.cultlogo{
+    height: 50vh;
+    z-index: 50;
+    margin-top: 150px;
+}
+.columnContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.event-timer{
+    margin-top: 20px;
+    display: flex;
+    font-size: large;
+    border-radius: 50px;
+    transform: scale(1.4);
+}
+.event-timer div{
+    width: 95px;
+    padding: 15px;
+    color: #122e22;
+    flex-basis: 50px;
+    font-size: 1.5rem;
+    text-align: center;
+    border-right: #465e64 solid 1px;
+    box-shadow: #0077b5;
+}
+.event-timer div:nth-child(4n){
+    border-right: none !important;
+}
+.event-timer div p{
+    font-size: 2.3rem;
+}
+.event-timer div span{
+    font-size: .9rem;
+}
+
+.event-timer{
+    display: inline-flex;
+    border-radius: 50px;
+    position: relative;
+}
+.event-timer div{
+    flex-basis: 100px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1px;
+    width: 80px;
+}
+.event-timer div span {
+    font-size: 8px;
+    font-family: "RomansStory",serif;
+}
+.event-timer div p {
+    font-size: 30px;
+    font-family: "RomansStory",serif;
+}
+.socials {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    padding-right: 5px!important;
+    padding: 18px;
+    margin-top: 20px;
+    z-index: 5;
+    background: #000000;
+    border: #fff groove 2px;
+    border-radius: 40px 0 0 40px;
+    transition: ease-in-out 0.3s;
+}
+
+.socials :hover{
+    scale: (1.5);
+    transition: ease-in-out 0.3s;
+}
+
+.socials a {
+    display: block;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 33.5px;
+    transition: ease-in-out 0.3s;
+}
+
+.socials :last-child{
+    margin-bottom: 0;
+}
+.socials a:hover {
+    color: #ffcc00;
+    transform: scale(1.3);
+    transition: ease-in-out 0.3s;
+}
+.menuList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.menuList li a {
+    margin-right: 30px;
+    font-size: 23px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "RomansStory",serif;
+}
+.menuList li a:hover {
+    color: #ffcc00;
+    transform: scale(1.3);
+    transition: ease-in-out 0.3s;
+}
+
+
+
+.about h3 {
+    color: #fff;
+    font-family: "RomansStory",serif;
+    font-weight: 400;
+    position: absolute;
+    top: 30%;
+    padding-right: 5px!important;
+    padding: 18px;
+    margin-top: 20px;
+    z-index: 5;
+    transition: ease-in-out 0.3s;
+    user-select: none;
+}
+.about:hover {
+    cursor: pointer;
+    /* color: red!important; */
+}
+#aboutOjus {
+    display: none;
+    width: 15vw;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    margin-left: 40px;
+    border: 1px solid white;
+    color: #fff;
+    font-weight: 100;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "RomansStory",serif;
+    background: rgba(255, 255, 255, 0.17);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(7.1px);
+    backdrop-filter: blur(7.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+#cancel {
+    cursor: pointer;
+    color: red;
+}
+.upperPopup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+.lowerPopup {
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0A212E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .waves {
+    position: relative;
+    top: 0;
+    background: rgba(255, 255, 255, .3);
+    left: 0;
+    width: 25px;
+    height: 25px;
+    margin-left: -12px;
+    margin-top: -12px;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .waves:before,
+  .waves:after {
+    content: "";
+    position: absolute;
+    background: white;
+    margin-left: -12px;
+    margin-top: -12px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+    animation: wave-animate 2s infinite ease-out;
+  }
+  
+  @keyframes wave-animate {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+      transform-origin: center;
+    }
+    100% {
+      transform: scale(3);
+      opacity: 0;
+      transform-origin: center;
+    }
+  }
