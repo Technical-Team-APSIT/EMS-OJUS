@@ -1,6 +1,139 @@
+{% extends 'base.html' %}
+
 {% block content %}
 {% load static %}
 
-Hi cultural landing
+
+
+<meta property="og:title" content="OJUS 2024">
+    <meta property="og:site_name" content="OJUS-Chronicles Of the Ages">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="OJUS IS BACK!!!">
+    <meta property="og:type" content="">
+    <meta property="og:image" content="https://res.cloudinary.com/dsduxocoj/image/upload/v1705957565/ogimage_qgeata.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#0000">
+    <link rel="stylesheet" href="{% static "css/styles2.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-wHT6ZyF3eFG65WVRF1+tXw4zg/U2t4tZ6bQp3pTecQp0+L2Q1uGIefTDIzW79vMC6NcMk6H9RXYL/2a9NlOgGA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
+
+
+<body>
+    <div class="preloader">
+        <div class="waves"></div>
+    </div>
+    <div class="stars"></div>
+        <div class="twinkling"></div>
+    <section id="home-section">
+        
+        <div class="clouds"></div>
+        <div class="logos">
+            <a href="index2.html"><h1 class="ROE" id="roeText">ojus '24</h1></a>
+            <div class="menuBar">
+                <ul class="menuList">
+                    <li><a href="#">Council</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Sponsors</a></li>
+                    <li><a href="{% url "schedule" %}">SchedulE</a></li>
+                    <li><a href="{% url "signup" %}">Ghanekar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="culturals-logo">
+            <img class="cultlogo" src="https://res.cloudinary.com/ds2uw5gcw/image/upload/v1706423655/atwlogo_z0pm5g.png" alt="culturals-logo">
+            <div class="columnContainer">
+                <div class="themeText"><h1>ChroniclEs <span>of</span> <span>the</span> Ages</h1></div>
+        
+        <div class="event-timer">
+            <div>
+                <p id="days">00</p>
+                <span>Days</span>
+            </div>
+            <div class="line">
+                <p id="hours">00</p>
+                <span>Hours</span>
+            </div>
+            <div class="line">
+                <p id="minutes">00</p>
+                <span>Minutes</span>
+            </div>
+            <div>
+                <p id="seconds">00</p>
+                <span>Seconds</span>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/ojus_apsit/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/ojus_apsit" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/ojus-apsit/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/@ojus-radianceofeuphoria5292" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="about" id="aboutDiv" onclick="toggleAboutOjus()">
+            <h3>About</h3>
+        </div>
+    
+        <div id="aboutOjus">
+            <div id="popUp">
+                <div class="upperPopup">
+                    <h3>About Ojus</h3>
+                    <div id="cancel" onclick="hideAboutOjus()">
+                        <h4 style="color: red">X</h4>
+                    </div>
+                </div>
+                <div class="lowerPopup">
+                    OJUS - Radiance of Euphoria is an intercollegiate festival hosted annually by the students of APSIT. It's an amalgamation of Sports, Literature & Cultural festival comprising of intellectual as well as fun & creative events with a variety of games and entertainment shows. It's not just a festival of various colorful events but a platform where students freely express themselves and our hidden gems come out with their talents.
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('contextmenu', function (e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+        function toggleAboutOjus() {
+            var aboutOjus = document.getElementById("aboutOjus");
+            var isVisible = aboutOjus.style.opacity === "1";
+
+            if (isVisible) {
+                aboutOjus.style.opacity = "0";
+                setTimeout(function () {
+                    aboutOjus.style.display = "none";
+                }, 500);
+            } else {
+                aboutOjus.style.display = "block";
+                setTimeout(function () {
+                    aboutOjus.style.opacity = "1";
+                }, 0);
+            }
+        }
+
+        function hideAboutOjus() {
+            var aboutOjus = document.getElementById("aboutOjus");
+            aboutOjus.style.opacity = "0";
+            setTimeout(function () {
+                aboutOjus.style.display = "none";
+            }, 500);
+        }
+    </script>
+
+    <script src="{% static "js/landing.js" %}"></script>
+</body>
+
+
+
+
+
+
+
+    
+
 
 {% endblock %}
