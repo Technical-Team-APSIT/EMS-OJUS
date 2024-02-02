@@ -18,6 +18,9 @@ def culturals(request):
 def schedule(request):
     return render(request, 'culturals/schedule.html')
 
+def heads(request):
+    return render(request, 'culturals/heads.html')
+
 def scan(request):
 
     if request.method == 'POST':
