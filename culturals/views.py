@@ -21,6 +21,9 @@ def schedule(request):
 def heads(request):
     return render(request, 'culturals/heads.html')
 
+def ghanekar(request):
+    return render(request, 'culturals/ghanekar.html')
+
 def scan(request):
 
     if request.method == 'POST':

@@ -14,7 +14,7 @@
 #nav img{
     height: 70px;
     padding-left: 30px;
-    margin-top: 30px;
+    margin-top: 0px;
     display: flex;
 }
 #nav center{
@@ -30,8 +30,27 @@
 
 body{
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
+@font-face {
+    font-family: "RomansStory";
+    src: url("../static/fonts/RomansStory.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+#title{
+    font-family: 'RomansStory', sans-serif;
+    font-size: 180px;
+    color: oldlace;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 #team{
     display: flex;
     align-items: center;
