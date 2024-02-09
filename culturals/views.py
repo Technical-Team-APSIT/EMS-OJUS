@@ -24,6 +24,9 @@ def heads(request):
 def ghanekar(request):
     return render(request, 'culturals/ghanekar.html')
 
+def council(request):
+    return render(request, 'culturals/council.html')
+
 def scan(request):
 
     if request.method == 'POST':
