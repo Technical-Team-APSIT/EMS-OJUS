@@ -149,13 +149,14 @@ header a, a:visited {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-top: 1em;
 }
 .logos .ROE {
     color: #fff;
     font-family: "RomansStory", serif;
     position: relative;
     z-index: 100;
-    font-size: 6em;
+    font-size: 3em;
     font-weight: 300;
     margin-top: 0.15em;
     margin-left: 0.15em;
@@ -172,7 +173,7 @@ header a, a:visited {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 25vh;
+    margin-top: 30vh;
     height: 5vh;
     position: absolute;
     left: 31%;
