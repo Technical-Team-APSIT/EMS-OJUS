@@ -7,8 +7,8 @@
    <link rel="stylesheet" href="{% static 'css/council.css' %}" />
 
 
-    <body>
     <div class="main">
+    <a class="back-home" href="{% url "signup" %}"><span>Signup</span></a>
       <div class="overlay">
         <div class="hero">
           <div class="title">Meet The Pantheon</div>
@@ -19,7 +19,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/anuj.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Anuj Shinde</div>
@@ -29,7 +29,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/profile.png' %}" alt="" />
               </div>
             </div>
             <div class="name">Aniruddha Sawant</div>
@@ -41,7 +41,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/razzaq.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Razzaq Shikalgar</div>
@@ -51,7 +51,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/ria.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Ria Gawai</div>
@@ -61,7 +61,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/palav.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Soham palav</div>
@@ -74,7 +74,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/amogh.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Amogh Dewanpelli</div>
@@ -83,7 +83,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/sharayu.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Sharayu Mahajan</div>
@@ -92,7 +92,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/sanket.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Sanket Sarode</div>
@@ -101,7 +101,7 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/om.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Om Kumbhar</div>
@@ -113,25 +113,17 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/adrian.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Adrien Gilbert</div>
           </div>
-          <div class="card">
+
+                    <div class="card">
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
-              </div>
-            </div>
-            <div class="name">Alisha Sanghvi</div>
-          </div>
-          <div class="card">
-            <div class="image-container">
-              <div class="profile"></div>
-              <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/shravani.jpg' %}" alt="" />
               </div>
             </div>
             <div class="name">Shravani Kulkarni</div>
@@ -140,15 +132,24 @@
             <div class="image-container">
               <div class="profile"></div>
               <div class="user-image">
-                <img src="images/profile.png" alt="" />
+                <img src="{% static 'assets/council/alisha.jpg' %}" alt="" />
               </div>
             </div>
-            <div class="name">Ash Chavan</div>
+            <div class="name">Alisha Sanghvi</div>
+          </div>
+
+          <div class="card">
+            <div class="image-container">
+              <div class="profile"></div>
+              <div class="user-image">
+                <img src="{% static 'assets/council/ansh.jpg' %}" alt="" />
+              </div>
+            </div>
+            <div class="name">Ansh Chavan</div>
           </div>
         </div>
       </div>
     </div>
-  </body>
 
 
 
