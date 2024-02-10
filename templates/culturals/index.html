@@ -14,7 +14,165 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="{% static 'css/mobland.css' %}">
     <link rel="prefetch" href="{% static 'assets/paperEffect.webp'%}">
+
+
+
+<body>
+
+    <div class="preloader">
+        <img src="{% static 'assets/preloaderOJUS.webp' %}" alt="Preloader" />
+    </div>
+
+    <section class="mainSection">
+                <svg class="svgClouds" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    
+                    <image class="cloud2" xlink:href="https://assets.codepen.io/721952/cloud1.png" width="1200" height="1000" />
+                    
+                    <image class="cloud4" xlink:href="https://assets.codepen.io/721952/cloud2.png" width="1200" height="1000" />
+                    <image class="cloud3" xlink:href="https://assets.codepen.io/721952/cloud3.png" width="1200" height="1000" />
+                </svg>
+                <dotlottie-player src="https://lottie.host/bc863bbb-f006-4696-8b62-59ce66b2fab2/FGIctQwJmf.json" background="transparent" speed="1" style="width: 450px; height: 400px" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+                    <!-- <article id="wrap">
+                        <article id="lightings">
+                            <section id="one">
+                                <section id="two">
+                                    <section id="three">
+                                        <section id="four">
+                                            <section id="five">
+                                                
+                                            </section>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </article>
+                    </article> -->
+        <div class="logos">
+            <a href="index.html"><h1 class="ROE" id="roeText">OjuS '24</h1></a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <h5 class="menu" id="menuBtn">Menu</h5>
+            </button>
+            <div class="mobile-nav">
+                <button type="button" class="times" onclick="toggleMenu()"><h3 class="menu">Close</h3></button>
+                <div class="columnMenu">
+                    <ul class="navigation">
+                        <li class="navLinks"><a href="{% url 'cultural' %}">Home</a></li>
+                        <li class="navLinks"><a href="#">Events</a></li>
+                        <!-- <li class="navLinks"><a href="{% url 'heads' %}">Heads</a></li> -->
+                        <li class="navLinks"><a href="{% url 'council' %}">Council</a></li>
+                        <li class="navLinks"><a class="ghanekar" href="{% url 'signup' %}"><span>Ghanekar</span></a></li>
+                    </ul>
+                    <h6 class="normalText">Radiance of Euphoria</h6>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <img src="{% static '/assets/ojus_chronicles_zeta.png' %}" alt="">
+            <h1 class="themeText">ChroniclEs <span>of</span><br> <span>the</span> Ages</h1>
+            <h1 class="themeROE">Radiance Of Euphoria</h1>
+            <div class="event-timer">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div class="line">
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div class="line">
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+                </div>
+            <!-- <button class="btn">Be Radiant</button> -->
+            <!-- <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+<a href="https://logwork.com/countdown-4yh8" class="countdown-timer" data-timezone="Asia/Kolkata" data-date="2024-02-26 14:24">countdown-timer</a> -->
+        </div>
+    </section>
+    <section class="thirdSection">
+        <!-- <div class="scrolling-container" id="scrollingContainer">
+        </div> -->
+    </section>
+    <section class="retroSection">
+        
+            <div class="retroText">
+                <div class="cloudContainer">
+                </div>
+                <div class="randomContainer">
+                    <div class="textsContainer">
+                        <div class="randomContainer2">
+                            <h1 class="retroHeading"><span>About</span> <span>Us</span></h1>
+                            <!-- <h4>Annual Cultural Fest, managed by students <span>Of</span> APSIT</h4> -->
+                        </div>
+                        <img class="retroSunflower" src="{% static 'assets/1.jpg' %}" alt="">
+                        <p class="aboutUsTexts">
+                            <span>OJUS - Radiance of Euphoria</span> is an intercollegiate festival hosted annually by the students of APSIT. It's an amalgamation of Sports, Literature & Cultural festival comprising of intellectual as well as fun & creative events with a variety of games and entertainment shows. It's not just a festival of various colorful events but a platform where students freely express themselves and our hidden gems come out with their talents
+                        </p>
+                        <div class="randomContainer3">
+                            
+                            <!-- <div class="randomContainer4">
+                                <img class="retroSunflower" src="{% static 'assets/retroSunflower.avif'%}" alt="">
+                            </div>
+                            <img class="balle" src="{% static 'assets/test2.png'%}" alt="">
+                        </div> -->
+                    </div>
+        </div>
+    </div>
+    </section>
+    <section class="thirdSection preGallerySection">
+        <div class="preGalleryContainer">
+            <div class="preGalleryText">The Radiance of Euphoria Illuminates Our Journey to Joyful Bliss</div>
+            <div class="inclined-plane left-to-right">
+                <div class="horizontal-plane">
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="preGalleryText2">and the legacy would continue</div>
+            <div class="inclined-plane right-to-left">
+                <div class="horizontal-plane">
+                    <div class="ball" id="secondBall"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="galleryContainer">
+        <video class="backgroundVideo" autoplay loop muted playsinline>
+            <source src="https://res.cloudinary.com/dsduxocoj/video/upload/v1705950371/backgroundGalleryVideo_gbtn5k.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    
+        <div class="galleryHeader">
+            <h1>HalLway </h1>
+            
+        </div>
+        
+        <div class="gallery">
+            <img class="retroSunflower picture1" src="{% static 'assets/gallery.jpg'%}" alt="">
+            <img src="{% static 'assets/gallery1.jpg'%}" alt="" class="retroSunflower picture2">
+            <img src="{% static 'assets/gallery2.jpg'%}" alt="" class="retroSunflower picture3">
+            <img src="{% static 'assets/gallery3.jpg'%}" alt="" class="retroSunflower picture4">
+        </div>
+    </section>
+    <section class="madeWithLove">
+        <h5>made with ❤️ by <a href="#">Ojus Webdev</a></h5>
+    </section>
+
+  
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/mobland.js'%}"></script>
+   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+
+
+
+    
 
 
 
@@ -52,7 +210,7 @@
                     <li><a href="{% url 'council' %}">Council</a></li>
                     <li><a href="#">Events</a></li>
                     <li><a href="#">Sponsors</a></li>
-                    <li><a href="{% url "schedule" %}">SchedulE</a></li>
+                    <li><a href="{% url "heads" %}">heads</a></li>
                     <li><a class="ghanekar" href="{% url "signup" %}"><span>Signup</span></a></li>
                 </ul>
             </div>
