@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import GSigned
+from .models import GSigned, Event, Signed
 from django.contrib import messages
 
 
@@ -79,4 +79,38 @@ def ghanekar(request):
 
     
     return render(request, 'culturals/ghanekar.html', context)
+
+
+
+
+@login_required(login_url='login')
+def regForm(request, slug):
+    event = get_object_or_404(Event, slug=slug)
+    user = request.user
+
+    if request.method == 'POST':
+        if not event.fill:
+            # Check if the user is already registered for any event of that type
+                existing_registration = Signed.objects.filter(participant=user)
+                if existing_registration:
+                    return redirect('error')
+
+                signed_obj, created = Signed.objects.get_or_create(
+                    participant=user,
+                    event=event,
+                    pname1=request.POST.get('pname1'),
+                    dept=user.dept,
+                    year=user.year,
+                    ename=event.name,
+                    contact = request.POST.get('contact'),
+                )
+                if not created:
+                    messages.warning(request, f'You are already registered for the event.')
+        
+    context = {
+        'user': user,
+        'event': event,
+    }
+
+    return render(request, 'core/regForm.html', context)
 # Create your views here.
