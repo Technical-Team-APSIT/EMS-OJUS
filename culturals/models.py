@@ -17,6 +17,7 @@ class Event(models.Model):
     venue = models.CharField(null=True, max_length= 200)
     date = models.DateField()
     time = models.TimeField()
+    fill = models.BooleanField(default=True)
 
 
     
@@ -36,6 +37,20 @@ class eventHead(models.Model):
 
     def __str__(self):
         return str(f""+self.event.name+"_"+self.name+"")    
+    
+class Signed(models.Model):
+    participant = models.ForeignKey(User, on_delete=models.CASCADE)
+    contact = models.BigIntegerField(null=True)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    dept = models.CharField(max_length=6, null=True)
+    year = models.CharField(max_length=6, null=True)
+    pnsme = models.CharField(max_length= 200, blank=True)
+    ename = models.CharField(null=True, max_length= 200)
+
+
+
+
+
 
 
 
