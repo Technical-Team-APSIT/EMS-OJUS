@@ -9,13 +9,13 @@ body {
 }
 @font-face {
     font-family: "RomansStory";
-    src: url("assets/fonts/RomansStory.otf") format("opentype");
+    src: url("..static/fonts/RomansStory.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "DoubleBass";
-    src: url("assets/fonts/doublebass.rial-regular.ttf") format("opentype");
+    src: url("..static/fonts/doublebass.rial-regular.ttf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
@@ -178,7 +178,7 @@ section img {
 
 @font-face {
     font-family: "RomansStory";
-    src: url("assets/fonts/RomansStory.otf") format("opentype");
+    src: url("..static/fonts/RomansStory.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
@@ -235,7 +235,7 @@ section img {
     transition: width .3s ease-in-out;
 }
 /* .navigationLinksDivision a:hover {
-    cursor: url("assets/images/cursor.png"), pointer;
+    cursor: url(..static/assets/cursor.png), pointer;
 } */
 .navigationLinksDivision a:hover::after{
     width: 100%;
@@ -567,7 +567,7 @@ body {
 }
 
 .mainSection {
-    background: url(assets/images/bg.avif);
+    background: url("..static/assets/bg.avif");
     background-size: cover;
 }
 .cloud2,
