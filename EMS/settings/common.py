@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'fontawesomefree',
     'corsheaders',
     'qr_code',
+    'django_user_agents',
     #user apps
     'core.apps.CoreConfig',
     'culturals.apps.CulturalsConfig',
@@ -49,12 +50,15 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
 
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'EMS.urls'
@@ -89,6 +93,9 @@ DATABASES = {
          'NAME': BASE_DIR / 'db.sqlite3',
      }
  }
+
+
+
 
 AUTH_USER_MODEL="core.User"
 

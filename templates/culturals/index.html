@@ -3,7 +3,11 @@
 {% block content %}
 {% load static %}
 
+{% if request.user_agent.is_mobile %}
 
+hi , mobile!
+
+{% else %}
 
 <meta property="og:title" content="OJUS 2024">
     <meta property="og:site_name" content="OJUS-Chronicles Of the Ages">
@@ -126,6 +130,8 @@
 
     <script src="{% static "js/landing.js" %}"></script>
 </body>
+
+{% endif %}
 
 
 
