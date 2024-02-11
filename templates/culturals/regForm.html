@@ -13,31 +13,31 @@
         Back</div>
    
         <div class="main-img">
-            <img src="https://res.cloudinary.com/dsduxocoj/image/upload/v1707541347/eventShower_2_xjmhjs.jpg" alt="">
+            <img src="{{event.img.url}}" alt="">
             <div class="submit">
                 <button type="submit" class="btn" id="registerBtn">Register</button>
             </div>  
         </div>
         <div class="text">
             <h4>Event Details</h4>
-            <h1>{{events.name}}</h1>
+            <h1>{{event.name}}</h1>
             <h2>Description</h2>
             <hr>
             <p> 
-                {{events.description|linebreaksbr }}
+                {{event.desc }}
             </p>
             <div class="last-text">
                 <div class="text1">
                     <h3>VENUE</h3>
-                    <h5>{{events.venue}}</h5>
+                    <h5>{{event.venue}}</h5>
                 </div>
                 <div class="text2">
                     <h3>Date </h3>
-                    <h5>{{events.date}}</h5>
+                    <h5>{{event.date}}</h5>
                 </div>
                 <div class="text3">
                     <h3>Time</h3>
-                    <h5>{{events.time}}</h5>
+                    <h5>{{event.time}}</h5>
                 </div>
             </div>
         </div>

@@ -116,7 +116,7 @@ section{
     margin-bottom: 10px;
 }
 .text h1{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'RomansStory', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 36px;
     text-transform: capitalize;
@@ -133,6 +133,8 @@ hr{
     margin-bottom: 50px;
 }
 .text p{
+    font-family: 'Poppins', sans-serif;
+
     max-width: 600px;
     color: aliceblue;
     font-size: 15px;
@@ -156,6 +158,8 @@ hr{
     color: beige;
 }
 .last-text h5{
+    font-family: 'Poppins', sans-serif;
+
     color: beige;
     font-size: 18px;
     font-weight: 500;
