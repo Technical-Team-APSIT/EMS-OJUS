@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+{% load static %}
+
+<h1> Day 1 </h1>
+{% for event in day1 %}
+<a href="{% url 'reg' event.slug %}">  {{event.name}} </a>
+{%endfor%}
+
+<hr>
+
+<h1> Day 2 </h1>
+{% for event in day2 %}
+<a href="{% url 'reg' event.slug %}">  {{event.name}} </a>
+{%endfor%}
+
+<hr>
+
+<h1> Day 3 </h1>
+{% for event in day3 %}
+<a href="{% url 'reg' event.slug %}">  {{event.name}} </a>
+{%endfor%}
+
+<hr>
+
+<h1> Day 4 </h1>
+{% for event in day4 %}
+<a href="{% url 'reg' event.slug %}">  {{event.name}} </a>
+{%endfor%}
+
+<hr>
+
+{% endblock%}

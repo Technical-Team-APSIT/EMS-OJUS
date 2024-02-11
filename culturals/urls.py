@@ -9,6 +9,7 @@ urlpatterns = [
     path('schedule', views.schedule, name='schedule'),
     path('heads', views.heads, name='heads'),
     path('council', views.council, name='council'),
+    path('events', views.events, name='events'),
     path('register/<slug:slug>', views.regForm, name='reg'),
 
 

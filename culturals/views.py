@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import GSigned, Event, Signed
 from django.contrib import messages
+from datetime import datetime, date
+
 
 
 
@@ -81,7 +83,21 @@ def ghanekar(request):
     return render(request, 'culturals/ghanekar.html', context)
 
 
+def events(request):
+    events = Event.objects.all()
+    day1 = Event.objects.filter(date=date(2024, 2, 26))
+    day2 = Event.objects.filter(date=date(2024, 2, 27))
+    day3 = Event.objects.filter(date=date(2024, 2, 28))
+    day4 = Event.objects.filter(date=date(2024, 2, 29))
 
+    context = {
+        'events': events,
+        'day1': day1,
+        'day2':day2,
+        'day3':day3,
+        'day4':day4,
+    }
+    return render(request, "culturals/events.html", context)
 
 @login_required(login_url='login')
 def regForm(request, slug):
@@ -89,7 +105,7 @@ def regForm(request, slug):
     user = request.user
 
     if request.method == 'POST':
-        if not event.fill:
+        if event.fill:
             # Check if the user is already registered for any event of that type
                 existing_registration = Signed.objects.filter(participant=user)
                 if existing_registration:
@@ -112,5 +128,5 @@ def regForm(request, slug):
         'event': event,
     }
 
-    return render(request, 'core/regForm.html', context)
+    return render(request, 'culturals/regForm.html', context)
 # Create your views here.
