@@ -91,6 +91,12 @@ body{
     padding-bottom: 40px;
 }
 
+center h2{
+    font-family: 'RomansStory', sans-serif;
+    font-weight: 400;
+    font-size: 100px!important;
+}
+
 .team-box{
 
     width: 100%;
