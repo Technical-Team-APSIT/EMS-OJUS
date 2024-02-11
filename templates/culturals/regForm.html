@@ -1,78 +1,64 @@
-{% extends 'base.html' %}
-
-
-
+{% extends "base.html" %}
 
 {% block content %}
-
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/regform.css' %}" type="text/css">
+    <link href="{% static 'css/event-detail(cult).css' %}" type="text/css" rel="stylesheet" />
 
+    <script src="{% static 'https://kit.fontawesome.com/93e46d1cec.js' %}" crossorigin="anonymous"></script>
 
-
-    </div>
-    </a>
-    <div class="wrapper">
-
-    {% if event.is_team %}
-
-    <h1> Sign Up via your Team Manager </h1>
-
-    {% else %}
-        <form method='POST'>
-        {% csrf_token %}
-            <h1> {{event.name}} </h1>
-
-           
-                        <div class="input-box">
-                <input type="text" id="pname1" name="pname1"  placeholder="Participant 1" value="{{user.fname}} {{user.lname}}" required >
-            </div>
-
-                                    <div class="input-box">
-                <input type="tel" id="contact" name="contact" pattern='[0-9]{10}'  placeholder="Phone Number 1" required >
-            </div>
-
-            <div class="input-box">
-                <input type="text"   placeholder="Department" value="{{user.dept}}" required >
-            </div>
-            <div class="input-box">
-                <input type="text"   placeholder="Year" value="{{user.year}}" required >
-            </div>
-
-            {% endif %}
-            
+    <section>
+    <div id="back-to-home" onclick="window.location.href='index.html'">
+        <!-- <i class="fa-solid fa-caret-left"></i>  -->
+        Back</div>
+   
+        <div class="main-img">
+            <img src="https://res.cloudinary.com/dsduxocoj/image/upload/v1707541347/eventShower_2_xjmhjs.jpg" alt="">
             <div class="submit">
-                <button type="submit" class="btn" > Register </button>
+                <button type="submit" class="btn" id="registerBtn">Register</button>
+            </div>  
+        </div>
+        <div class="text">
+            <h4>Event Details</h4>
+            <h1>{{events.name}}</h1>
+            <h2>Description</h2>
+            <hr>
+            <p> 
+                {{events.description|linebreaksbr }}
+            </p>
+            <div class="last-text">
+                <div class="text1">
+                    <h3>VENUE</h3>
+                    <h5>{{events.venue}}</h5>
+                </div>
+                <div class="text2">
+                    <h3>Date </h3>
+                    <h5>{{events.date}}</h5>
+                </div>
+                <div class="text3">
+                    <h3>Time</h3>
+                    <h5>{{events.time}}</h5>
+                </div>
             </div>
-        </form>
-    </div>
-    
-    <script> 
-        const inputIcon = document.querySelector(".input__icon");
-        const inputPassword = document.querySelector(".password");
-
-        inputIcon.addEventListener("click", () => {
-        inputIcon.classList.toggle("ri-eye-off-line");
-        inputIcon.classList.toggle("ri-eye-line");
-        inputPassword.type = inputPassword.type === "password" ? "text" : "password";
-        });
-
-    </script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    var windowHeight = window.innerHeight;
-    var numberOfLines = Math.floor(windowHeight / 120);
-
-    var slidingText = document.querySelector('.sliding-text');
-    slidingText.style.left = '-100%';
-    slidingText.style.top = 'calc(50% - ' + (numberOfLines * 65) + 'px)';
-    slidingText.style.animationDuration = numberOfLines * 4 + 's';
-    slidingText.style.animationIterationCount = 'infinite';
-});
+        </div>
+    </section>
+    <figure class="notification" id="notificationPopup" style="display: none;">
+        <div class="notification__body">
+            <div class="notification__description">
+                <div class="icon__wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 12l5 5l10 -10"></path>
+                    </svg>
+                </div>
+                Registration Successful!
+            </div>
+        </div>
+        <div class="notification__progress"></div>
+    </figure>
+</body>
 
 
-</script>
+
 
 {% endblock %}
