@@ -6,10 +6,12 @@
 
    <link rel="stylesheet" href="{% static 'css/council.css' %}" />
 
+    {% include 'preloader.html' %}
 
     <div class="main">
+
       <div class="overlay">
-          <a class="back-home" href="{% url "cultural" %}"><span>Back</span></a>
+          <a id="back-to-home" href="{% url "cultural" %}"><span>Back</span></a>
 
         <div class="hero">
           <div class="title">Meet The Pantheon</div>

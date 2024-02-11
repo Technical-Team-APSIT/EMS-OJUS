@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+
+    {% load static%}
+
+
+{% block content %}
+
+<link href='{% static 'css/preloader.css' %}'>
+
+
+   <div class="preloader">
+        <div class="scene">
+            <div class="wrap">
+                <div class="wall wall-right"></div>
+                <div class="wall wall-left"></div>   
+                <div class="wall wall-top"></div>
+                <div class="wall wall-bottom"></div> 
+                <div class="wall wall-back"></div>    
+            </div>
+            <div class="wrap">
+                <div class="wall wall-right"></div>
+                <div class="wall wall-left"></div>   
+                <div class="wall wall-top"></div>
+                <div class="wall wall-bottom"></div>   
+                <div class="wall wall-back"></div>    
+            </div>
+          </div>
+          
+    </div>
+
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    fadeOutAndHide('.preloader', 3500); // 5000 milliseconds (5 seconds) duration
+    showElement('#home-section');
+  });
+  
+  function fadeOutAndHide(selector, duration) {
+    const element = document.querySelector(selector);
+    let opacity = 1;
+    const interval = 50; // Interval for the opacity change (milliseconds)
+    const steps = duration / interval;
+    const deltaOpacity = opacity / steps;
+  
+    const fadeEffect = setInterval(function () {
+      if (opacity <= 0) {
+        clearInterval(fadeEffect);
+        hideElement(selector);
+      } else {
+        element.style.opacity = opacity;
+        opacity -= deltaOpacity;
+      }
+    }, interval);
+  }
+  
+  function hideElement(selector) {
+    document.querySelector(selector).style.display = 'none';
+  }
+  
+  function showElement(selector) {
+    document.querySelector(selector).style.display = 'block';
+  }
+
+  </script>
+
+{% endblock%}
+    
+</body>
+</html>
+

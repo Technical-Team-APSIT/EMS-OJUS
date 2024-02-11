@@ -14,9 +14,8 @@
 
 <body>
 
-    <div class="preloader">
-        <img src="{% static 'assets/preloaderOJUS.webp' %}" alt="Preloader" />
-    </div>
+
+{% include 'preloader.html' %}
 
     <section class="mainSection">
                 <svg class="svgClouds" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
@@ -183,9 +182,10 @@
 
 
 <body>
-    <div class="preloader">
-        <div class="waves"></div>
-    </div>
+
+{% include 'preloader.html' %}
+
+  
     <div class="stars"></div>
         <div class="twinkling"></div>
     <section id="home-section">
