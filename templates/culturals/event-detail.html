@@ -15,9 +15,50 @@
         <div class="main-img">
             <img src="https://res.cloudinary.com/dsduxocoj/image/upload/v1707541347/eventShower_2_xjmhjs.jpg" alt="">
             <div class="submit">
-                <button type="submit" class="btn" id="registerBtn">Register</button>
+                <button type="submit" class="btn"  onclick="toggleSignupForm()">Register</button>
             </div>  
         </div>
+        <div id="signupform" class="signup-closed">
+            <button class="close-btn" onclick="toggleSignupForm()">X</button>
+          <div class="form-title">Register Your <br>Team</div>
+            <form action="">
+                <div class="input-box">
+                    <input type="text" id="pname1" name="pname" placeholder="Full Name" required />
+                  </div>
+                  <div class="input-box">
+                    <input type="text" id="pname2" name="pname" placeholder="Full Name" required />
+                  </div>
+                  <div class="input-box">
+                    <input type="text" id="pname3" name="pname" placeholder="Full Name" required />
+                  </div>
+                  <div class="input-box">
+                    <input type="text" id="pname4" name="pname" placeholder="Full Name" required />
+                  </div>
+              <div class="input-box">
+                <input type="text" id="contact" name="contact" pattern="[0-9]{10}" inputmode="tel" placeholder="Mobile Number" required/>
+              </div>
+              <div class="input-box">
+                <select required title="Department">
+                  <option value="" disabled selected>Department</option>
+                  <option value="COMPS">COMPS</option>
+                  <option value="IT">IT</option>
+                  <option value="AIML">AIML</option>
+                  <option value="DS">DS</option>
+                  <option value="MECH">MECH/EXTC</option>
+                  <option value="CIVIL">CIVIL</option>
+                  </select>
+              </div>
+              <div class="input-box">
+                  <select required title="Year">
+                  <option value="" disabled selected>Select a Year</option>
+                  <option value="FE">FE</option>
+                  <option value="SE">SE</option>
+                  <option value="TE">TE</option>
+                  <option value="BE">BE</option>
+                  </select>
+              </div>
+              <button class="signupbtn" type="submit" id="registerBtn">Register</button>
+            </form>
         <div class="text">
             <h4>Event Details</h4>
             <h1>{{events.name}}</h1>
@@ -62,21 +103,23 @@
 
 <script>
     document.getElementById('registerBtn').addEventListener('click', function () {
-        // Disable the Register button
         this.disabled = true;
 
-        // Show the popup
         document.getElementById('notificationPopup').style.display = 'block';
     });
 
     document.getElementById('registerBtn').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the form from submitting immediately
 
         setTimeout(function() {
-            // Submit the form or perform other actions after 3 seconds
             window.location.href = "index.html";
         }, 3000);
     });
+
+    function toggleSignupForm() {
+  event.preventDefault();
+    const signupForm = document.getElementById('signupform');
+    signupForm.classList.toggle('signup-closed');
+}
 </script>
 
 
