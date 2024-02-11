@@ -6,6 +6,29 @@
     scroll-behavior: smooth;
 }
 
+
+#back-to-home {
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .takeline {
+    width: 100%;
+    margin-bottom: 20px; /* Adjust this value as needed */
+    display: block;
+
+}
+
+
 #nav{
     width: 100%;
     padding: 1px 0;
@@ -181,3 +204,4 @@ body{
     
     }
 }
+
