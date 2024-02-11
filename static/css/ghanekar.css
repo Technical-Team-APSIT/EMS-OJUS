@@ -1,0 +1,430 @@
+@font-face {
+    font-family: RomansStory;
+    src: url(../static/fonts/RomansStory.otf) format("opentype");
+    font-display: swap;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: RomansStory;
+  }
+  body {
+    background-color: #252525;
+    overflow-x: hidden;
+  }
+  .hero ,.first {
+    min-height: 100vh;
+    scroll-snap-align: center;
+  }
+  .main {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  .hero {
+    position: relative;
+    height: 100vh;
+    background-image: url(../static/assets/hero.jpg);
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .overlay {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  .bookaseat {
+    transition: all .5s ease;
+    color: #fff;
+    border: 3px solid white;
+    font-family: 'Montserrat', sans-serif;  
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 5vh;
+    cursor: pointer;
+  }
+  
+  .bookaseat:hover {
+    color: #001F3F;
+    background-color: #fff;
+  }
+  
+  .bookaseat a {
+    text-decoration: none;
+    color: white;
+    transition: all .5s ease;
+  }
+  
+  .bookaseat:hover a {
+    color: #001F3F;
+  }
+  
+  #signupform form {
+    margin-top: 2rem;
+    min-height: fit-content;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  .input-box input,select {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    color: #ffffff;
+    width: 25vw;
+    border: white 0.5px groove;
+    border-radius: 10px;  
+    background: transparent;
+    padding: 6px 6px;
+  }
+  
+  .input-box select option{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: #222020;
+  }
+  
+  
+  .input-box input::placeholder {
+    color: #ffffff;
+  }
+  
+  .signupbtn {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    color: #fff;
+    width: 9em;
+    height: 3em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg, #2ba5f6, #69007f, #fc0987, #03a9f4);
+    background-size: 300%;
+    border-radius: 30px;
+    z-index: 1;
+    margin-top: 5vh;
+  }
+  
+  .signupbtn:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+  }
+  
+  @keyframes ani {
+    0% {
+      background-position: 0%;
+    }
+  
+    100% {
+      background-position: 400%;
+    }
+  }
+  
+  .signupbtn:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,#2ba5f6, #69007f, #fc0987, #03a9f4);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+  }
+  
+  .signupbtn:hover::before {
+    filter: blur(20px);
+  }
+  
+  .signupbtn:active {
+    background: linear-gradient(32deg,#2ba5f6, #69007f, #fc0987, #03a9f4);
+  }
+  
+  #signupform {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    transition: transform 0.5s ease;
+    border-left: 1px solid white;
+    overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .signup-closed {
+    transform: translateX(100%);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  .title {
+    font-size: 5rem;
+    text-align: center;
+  }
+  .subtitle {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .first {
+    display: flex;
+    justify-content: center;
+  }
+  .slider-container {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  .slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .slider-wrapper img {
+    height: 90vh;
+    width: auto;
+    aspect-ratio: 4/5;
+    align-self: center;
+    border-radius: 1.3rem;
+  }
+  .myslides {
+    display: none;
+  }
+  .dots {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    bottom: 2.5rem;
+  }
+  .dot {
+    height: 1em;
+    width: 1rem;
+    align-self: center;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 0.7rem;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+  .active {
+    width: 2rem;
+    background-color: white;
+  }
+  .fade {
+    animation: fade ease 500ms;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.7;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  /* Video */
+  video {
+    background-color: black;
+    opacity: 0.2;
+    position: absolute;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  .video-potrait {
+    display: none;
+  }
+  .video-landscape {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .ticket-form {
+    background-image: url(../static/assets/form.jpg);
+    background-position: center center;
+    background-size: cover;
+  }
+  .form-title {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    margin-top: 10vh;
+    padding: 20px;
+  }
+  .full {
+    height: 100vh;
+  }
+  
+  @media screen and (max-width: 760px){
+    #signupform{
+      width: 100%;
+      border: none!important;
+    }
+  
+    .input-box input,select{
+      transform: scale(1.2);
+      width: 50vw;
+    }
+  
+    .madeWithLove {
+      background: #000;
+      color: #707070;
+      text-align: center;
+      padding-top:20px;
+      padding-bottom: 20px;
+      font-weight: 400;
+      font-family:Verdana, Geneva, Tahoma, sans-serif ;
+      font-size: 10px;
+  }
+  .madeWithLove h5 a {
+      text-decoration: none;
+      color: #fff;
+  }
+  }
+  
+  
+  @media screen and (max-width: 426px) {
+    .title {
+      font-size: 3rem;
+    }
+    .subtitle {
+      font-size: 2rem;
+    }
+    .video-landscape {
+      display: none;
+    }
+    .video-potrait {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .slider-wrapper img {
+      width: 90vw;
+      height: auto;
+    }
+    .dot {
+      width: 0.7rem;
+      height: 0.7rem;
+    }
+    .active {
+      width: 1.5rem;
+    }
+  }
+  
+  .madeWithLove {
+    background: #000;
+    min-height: fit-content!important;
+    color: #707070;
+    text-align: center;
+    padding-top:20px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 1em;
+  }
+  .madeWithLove h5 a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+
+  .ghanekar {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #2ba5f6, #69007f, #fc0987);
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 1.25em;
+  }
+  
+  .ghanekar span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ghanekar::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #272727;
+    border-radius: 9px;
+    transition: 0.5s;
+  }
+  
+  .ghanekar:hover::before {
+    opacity: 0.7;
+  }
+  
+  /* add some glow effect */
+  .ghanekar::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(45deg, #2ba5f6, #69007f, #fc0987);
+    border-radius: 9px;
+    transition: 0.5s;
+    opacity: 0;
+    filter: blur(20px);
+  }
+  
+  .ghanekar:hover:after {
+    opacity: 1;
+  }
+
+
+  #back-to-home {
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }

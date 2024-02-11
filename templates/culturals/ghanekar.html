@@ -9,49 +9,108 @@
 
 {% load qr_code %}
 
-
-<link rel="stylesheet" href="{% static 'css/regform.css' %}" type="text/css">
-
-
-    <div id="back-to-home" onclick="window.location.href='#'"><i class="fa-solid fa-caret-left"></i> Back</div>
-
-    </div>
-    </a>
-    <div class="wrapper">
-
-    {% if signed %}
-
-    {% qr_from_text user.moodle_id size="L" %}
-
-    {% else %}
-        <form method='POST'>
-        {% csrf_token %}
+<link rel="stylesheet" href="{% static 'css/ghanekar.css' %}" type="text/css">
 
 
 
-                        <div class="input-box">
-                <input type="text" id="pname1" name="pname"  placeholder="Full Name" value="{{user.fname}} {{user.lname}}" required >
-            </div>
+<body>
+    <div class="main">
+      <section class="hero">
+        <div class="overlay">
+            <a id="back-to-home" href="{% url "cultural" %}"> Back</a>
 
-                                    <div class="input-box">
-                <input type="tel" id="contact" name="contact" pattern='[0-9]{10}'  placeholder="Phone Number 1" required >
-            </div>
+          <div class="title">Kashinath Ghanekar</div>
+          <div class="subtitle">Natyagruh</div>
+          <button class="bookaseat" onclick="toggleSignupForm()"><a href="">BOOK A SEAT</a></button>
+        </div>
+        <div id="signupform" class="signup-closed">
+          <button class="close-btn" onclick="toggleSignupForm()">X</button>
+          {% if signed %}
 
+                  <div class="form-title">Scan this QR</div>
+
+                      {% qr_from_text user.moodle_id size="L" %}
+
+
+
+
+          {% else %}
+        <div class="form-title">Book a Seat</div>
+          <form action="#" method='POST'>
+          {% csrf_token %}
             <div class="input-box">
-                <input type="text"   placeholder="Department" value="{{user.dept}}" required >
+              <input
+                type="text"
+                id="pname1"
+                name="pname"
+                placeholder="Full Name"
+                value='{{user.fname}} {{user.lname}}'
+                required
+              />
             </div>
             <div class="input-box">
-                <input type="text"   placeholder="Year" value="{{user.year}}" required >
+              <input type="text" id="contact" name="contact" pattern="[0-9]{10}" inputmode="tel" placeholder="Mobile Number" required/>
             </div>
+            <div class="input-box">
+              <input type="text" placeholder="Department"  name='dept' value='{{user.dept}}' required />
+            </div>
+            <div class="input-box">
+                              <input type="text" placeholder="Year" name='year' value='{{user.year}}' required />
 
+            </div>
+            <button class="signupbtn" type="submit">PROCEED</button>
+          </form>
 
+          {%  endif %}
+        </div>
+      </section>
+      <section class="first">
+        <video
+          src="https://res.cloudinary.com/dsduxocoj/video/upload/v1706551872/video-landscape_cldiql.mp4"
+          class="video-landscape"
+          autoplay
+          loop
+          muted
+        ></video>
+        <video
+          src="https://res.cloudinary.com/dsduxocoj/video/upload/v1705950371/backgroundGalleryVideo_gbtn5k.mp4"
+          class="video-potrait"
+          autoplay
+          loop
+          muted
+        ></video>
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <div class="myslides fade">
+              <img src="{% static 'assets/gallery/1a.jpg' %}" alt="" />
+            </div>
+            <div class="myslides fade">
+              <img src="{% static 'assets/gallery/2a.jpg'%}" alt="" />
+            </div>
+            <div class="myslides fade">
+              <img src="{% static 'assets/gallery/3a.jpg'%}" alt="" />
+            </div>
+            <div class="myslides fade">
+              <img src="{% static 'assets/gallery/4.jpg'%}" alt="" />
+            </div>
             
-            <div class="submit">
-                <button type="submit" class="btn" > Register </button>
+            <div class="myslides fade">
+              <img src="{% static 'assets/gallery/5.jpg'%}" alt="" />
             </div>
-        </form>
-        {% endif %}
-    </div>
+            <div class="dots">
+              <div class="dot" onclick="showSlide(0, this)"></div>
+              <div class="dot" onclick="showSlide(1, this)"></div>
+              <div class="dot" onclick="showSlide(2, this)"></div>
+              <div class="dot" onclick="showSlide(3, this)"></div>
+              <div class="dot" onclick="showSlide(4, this)"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="madeWithLove">
+        <h5>made with ❤️ by <a href="team.html">Ojus Webdev</a></h5>
+    </section>
+</div>
 
     <script>
 
@@ -65,6 +124,53 @@
     domReady(displayMessages);<
         </script>
     
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+      let slideIndex = 0;
+      let slides = document.getElementsByClassName("myslides");
+      let dots = document.getElementsByClassName("dot");
+      let timeout;
+      showSlides();
+      function showSlide(n, target) {
+        let i;
+        slideIndex = n;
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[n].style.display = "block";
+        dots[n].classList.add("active");
+        if (target) {
+          clearTimeout(timeout);
+          timeout = setTimeout(showSlides, 2000);
+        }
+      }
+
+      function showSlides() {
+        slideIndex++;
+        if (slideIndex === slides.length) {
+          slideIndex = 0;
+        }
+        showSlide(slideIndex);
+        timeout = setTimeout(showSlides, 2000);
+      }
+
+      function toggleSignupForm() {
+  event.preventDefault();
+    const signupForm = document.getElementById('signupform');
+    signupForm.classList.toggle('signup-closed');
+}
+
+    </script>
+  </body>
 
 
 
