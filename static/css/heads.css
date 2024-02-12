@@ -30,9 +30,11 @@
 
 
 #nav{
-    width: 100%;
-    padding: 1px 0;
-
+    width:80%;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    z-index: 999;
 }
 #nav img{
     height: 70px;
@@ -42,6 +44,15 @@
 }
 #nav center{
     color: white;
+}
+
+#nav h2 {
+    margin-top: 70px;
+    transition: color 0.3s ease;
+}
+
+#nav h2.active {
+    color: red;
 }
 
 #nav center h2{
