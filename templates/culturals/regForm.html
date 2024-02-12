@@ -7,8 +7,9 @@
 
     <script src="{% static 'https://kit.fontawesome.com/93e46d1cec.js' %}" crossorigin="anonymous"></script>
 
+ <body>
     <section>
-    <div id="back-to-home" onclick="window.location.href='{% url 'cultural' %}'">
+    <div id="back-to-home" onclick="window.location.href='index.html'">
         <!-- <i class="fa-solid fa-caret-left"></i>  -->
         Back</div>
    
@@ -21,30 +22,30 @@
         <div id="signupform" class="signup-closed">
             <button class="close-btn" onclick="toggleSignupForm()">X</button>
           <div class="form-title">Register Your <br>Team</div>
-            <form action="">
+            <form action="#" method='POST'>
+            {% csrf_token %}
                 <div class="input-box">
-                    <input type="text" id="pname1" name="pname" placeholder="Full Name" value="{{user.fname}} {{user.lname}}" required />
+                    <input type="text" id="pname" name="pname" placeholder="Full Name" value='{{user.fname}} {{user.lname}}' required />
                   </div>
                   <div class="input-box">
-                    <input type="text" name="dept" placeholder="Department" value="{{user.dept}}" required />
+                    <input type="text" id="dept" name="dept" placeholder="Department" value='{{user.dept}}' required />
                   </div>
                   <div class="input-box">
-                    <input type="text" id="year" name="year" placeholder="Year" value="{{user.year}}" required />
+                    <input type="text" id="year" name="year" placeholder="Year" value='{{user.year}}' required />
                   </div>
-
               <div class="input-box">
                 <input type="text" id="contact" name="contact" pattern="[0-9]{10}" inputmode="tel" placeholder="Mobile Number" required/>
               </div>
               
               <button class="signupbtn" type="submit" id="registerBtn">Register</button>
             </form>
+          </div>
         <div class="text">
             <h4>Event Details</h4>
             <h1>{{event.name}}</h1>
             <h2>Description</h2>
             <hr>
-            <p> 
-                {{event.desc}}
+            <p>{{event.desc}}
             </p>
             <div class="last-text">
                 <div class="text1">
@@ -53,11 +54,11 @@
                 </div>
                 <div class="text2">
                     <h3>Date </h3>
-                    <h5>{{event.date}}</h5>
+                    <h5 style="text-wrap: nowrap;">{{event.date}}</h5>
                 </div>
                 <div class="text3">
                     <h3>Time</h3>
-                    <h5>{{event.time}}</h5>
+                    <h5 style="text-wrap: nowrap;">{{event.time}}</h5>
                 </div>
             </div>
         </div>
@@ -80,16 +81,17 @@
 
 <script>
     document.getElementById('registerBtn').addEventListener('click', function () {
+        // Disable the Register button
         this.disabled = true;
 
+        // Show the popup
         document.getElementById('notificationPopup').style.display = 'block';
     });
 
     document.getElementById('registerBtn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting immediately
 
-        setTimeout(function() {
-            window.location.href = "index.html";
-        }, 3000);
+        
     });
 
     function toggleSignupForm() {
@@ -98,6 +100,5 @@
     signupForm.classList.toggle('signup-closed');
 }
 </script>
-
 
 {% endblock %}
