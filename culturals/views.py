@@ -114,12 +114,13 @@ def regForm(request, slug):
                 signed_obj, created = Signed.objects.get_or_create(
                     participant=user,
                     event=event,
-                    pname1=request.POST.get('pname1'),
+                    pname=request.POST.get('pname'),
                     dept=user.dept,
                     year=user.year,
                     ename=event.name,
                     contact = request.POST.get('contact'),
                 )
+                redirect('cultural')
                 if not created:
                     messages.warning(request, f'You are already registered for the event.')
         

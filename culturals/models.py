@@ -44,7 +44,7 @@ class Signed(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     dept = models.CharField(max_length=6, null=True)
     year = models.CharField(max_length=6, null=True)
-    pnsme = models.CharField(max_length= 200, blank=True)
+    pname = models.CharField(max_length= 200, blank=True)
     ename = models.CharField(null=True, max_length= 200)
 
 

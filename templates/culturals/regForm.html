@@ -9,7 +9,7 @@
 
  <body>
     <section>
-    <div id="back-to-home" onclick="window.location.href='index.html'">
+    <div id="back-to-home" onclick="window.location.href='{% url 'events' %}'">
         <!-- <i class="fa-solid fa-caret-left"></i>  -->
         Back</div>
    
@@ -20,25 +20,33 @@
             </div>  
         </div>
         <div id="signupform" class="signup-closed">
-            <button class="close-btn" onclick="toggleSignupForm()">X</button>
-          <div class="form-title">Register Your <br>Team</div>
-            <form action="#" method='POST'>
-            {% csrf_token %}
-                <div class="input-box">
-                    <input type="text" id="pname" name="pname" placeholder="Full Name" value='{{user.fname}} {{user.lname}}' required />
-                  </div>
-                  <div class="input-box">
-                    <input type="text" id="dept" name="dept" placeholder="Department" value='{{user.dept}}' required />
-                  </div>
-                  <div class="input-box">
-                    <input type="text" id="year" name="year" placeholder="Year" value='{{user.year}}' required />
-                  </div>
-              <div class="input-box">
-                <input type="text" id="contact" name="contact" pattern="[0-9]{10}" inputmode="tel" placeholder="Mobile Number" required/>
-              </div>
-              
-              <button class="signupbtn" type="submit" id="registerBtn">Register</button>
-            </form>
+             <div class="form-title">Book a Seat</div>
+          <form action="#" method='POST'>
+          {% csrf_token %}
+            <div class="input-box">
+              <input
+                type="text"
+                id="pname1"
+                name="pname"
+                placeholder="Full Name"
+                value='{{user.fname}} {{user.lname}}'
+                required
+              />
+            </div>
+            <div class="input-box">
+              <input type="text" id="contact" name="contact" pattern="[0-9]{10}" inputmode="tel" placeholder="Mobile Number" required/>
+            </div>
+            <div class="input-box">
+              <input type="text" placeholder="Department"  name='dept' value='{{user.dept}}' required />
+            </div>
+            <div class="input-box">
+                              <input type="text" placeholder="Year" name='year' value='{{user.year}}' required />
+
+            </div>
+            <button class="signupbtn" type="submit">PROCEED</button>
+          </form>
+
+
           </div>
         <div class="text">
             <h4>Event Details</h4>
