@@ -24,7 +24,12 @@
 
           <div class="title">Kashinath Ghanekar</div>
           <div class="subtitle">Natyagruh</div>
-          <button class="bookaseat" onclick="toggleSignupForm()"><a href="">BOOK A SEAT</a></button>
+          {% if signed %}
+          <button class="bookaseat" onclick="toggleSignupForm()"><a href="">VIEW TICKET</a></button>
+          {% else %}
+                    <button class="bookaseat" onclick="toggleSignupForm()"><a href="">BOOK A SEAT</a></button>
+
+{% endif %}
         </div>
         <div id="signupform" class="signup-closed">
           <button class="close-btn" onclick="toggleSignupForm()">X</button>

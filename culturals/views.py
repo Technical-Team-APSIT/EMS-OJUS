@@ -68,6 +68,7 @@ def ghanekar(request):
                 contact = request.POST.get('contact'),
                 scanned = False,
             )
+            return redirect('signup')
             if not created:
                 messages.warning(request, f'Something is wrong with you.')
         else:
