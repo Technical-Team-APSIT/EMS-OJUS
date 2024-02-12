@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "RomansStory";
-    src: url("assets/fonts/RomansStory.otf") format("opentype");
+    src: url("../static/fonts/RomansStory.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
@@ -77,7 +77,7 @@ section{
 }
 
 .submit button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'RomansStory', sans-serif;
     font-weight: 100;
     font-size: 1.5rem;
      background-image: linear-gradient(to right, #F09819 0%, #EDDE5D  51%, #F09819  100%);         
@@ -116,7 +116,7 @@ section{
     margin-bottom: 10px;
 }
 .text h1{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'RomansStory', sans-serif;
     color: rgb(255, 255, 255);
     font-size: 36px;
     text-transform: capitalize;
