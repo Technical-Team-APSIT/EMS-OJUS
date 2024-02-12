@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+@font-face {
+    font-family: "RomansStory";
+    src: url("../static/fonts/RomansStory.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: "RomansStory", sans-serif;
+    color: #fff;
+    background: #000;
+}
+.firstSection {
+    background: #000000;
+    /* height: 100vh; */
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+.navbar h1 {
+    font-weight: 200;
+    color: #fff;
+    text-decoration: none;
+    font-size: 5em;
+    padding-top: 0.15em;
+    padding-left: 0.25em;
+    position: fixed;
+    z-index: 100;
+}
+.redSection {
+    width: 20vw;
+    background: #ff3838;
+    font-family: 'Fjalla One', sans-serif;
+    margin-right: 2em;
+    /* padding-top: 2em; */
+    /* margin-top: -5em; */
+    text-align: end;
+    z-index: 100;
+}
+/* .firstRed {
+    font-size: 2em;
+    letter-spacing: 10px;
+} */
+.firstRedText {
+    font-weight: 100;
+    font-size: 4em;
+}
+.secondRedText {
+    padding-top: 4.5em;
+    text-align: end;
+    padding-right: 0.2em;
+    font-size: 3em;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 100;
+
+}
+.thirdRedText {
+    font-weight: 100;
+}
+.animate-from-above {
+    animation: slideFromAbove 2s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideFromAbove {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.redSection .secondRedText,
+.redSection .thirdRedText {
+    opacity: 0;
+    transition: opacity 1s ease-in-out 2s;
+}
+
+.redSection.animate-from-above .secondRedText,
+.redSection.animate-from-above .thirdRedText {
+    opacity: 1;
+}
+/* .hero {
+} */
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content h1{
+    font-size: 15em;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: 900;
+    letter-spacing: 10px;
+    text-align: center;
+    /* color: red; */
+    position: absolute;
+    top: 10%;
+    /* left: 50%; */
+}
+.hero-content p{
+    font-weight: 200;
+}
+/* .hero-content {
+    display: none;
+} */
+.shower {
+    margin-top: -12em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.showerImage {
+    /* margin-top: 5em; */
+    max-width: 90vw;
+    align-items: center;
+    border-radius: 75px;
+    filter: brightness(0.5);
+}
+.daysContainer {
+    position: absolute;
+    top: 95%;
+    left: 4.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2em;
+}
+.day1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: red;
+    background: rgba(255, 255, 255, 0.17);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+-webkit-backdrop-filter: blur(7.1px);
+backdrop-filter: blur(7.1px);
+border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 30px;
+    width: 90vw;
+    /* position: relative; */
+} 
+.leftTexts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2em;
+}
+.leftText {
+    font-family: "Fjalla One", sans-serif;
+    font-size: 11em;
+    font-weight: 900;
+}
+.paintBall {
+    position: absolute;
+    left: -55%;
+    padding-top: 1em;
+}
+.leftText2 {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+.rightDay {
+    font-family: "Roboto Condensed", sans-serif;
+    padding-top: 2em;
+    margin-right: -7em;
+    padding-bottom: 2em;
+}
+.rightScroller {
+    list-style-type: none;
+}
+.rightScroller li {
+    /* font-family: "RomansStory", sans-serif; */
+    font-size: 4.5em;
+    border-bottom: 1px solid #fff;
+}
+.daysContainerGlow {
+    opacity: 1;
+}
+.daysContainer2 {
+    top: 200%;
+    /* margin-bottom: 2em; */
+}
+.daysContainer3 {
+    padding-top: 2em;
+    top: 300%;
+}
+.daysContainer4 {
+    padding-top: 4em;
+    top: 400%;
+}
+/* .animate-from-below h1 {
+    animation: slideFromBelow 1s ease forwards;
+    opacity: 0;
+    position: relative;
+}
+
+@keyframes slideFromBelow {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+.animate-from-below {
+    animation: slideFromBelow 4s ease forwards;
+    opacity: 0;
+    /* position: relative; */
+}
+@keyframes slideFromBelow {
+    0% {
+        opacity: 0;
+        /* transform: translateY(2px); */
+    }
+    100% {
+        opacity: 1;
+        /* top: -50%; */
+    }
+}
+.menu {
+    margin-left: 2.25em;
+    position: absolute;
+    top: 40%;
+}
+.stickedMenu {
+    list-style-type: none;
+    position: fixed;
+    z-index: 100;
+    /* color: #fff; */
+}
+.menu a  {
+    color: #fff;
+    text-decoration: none;
+}
+.menuItems {
+    font-size: 1.7em;
+    margin-bottom: 0.25em;
+    opacity: 0.35;
+    transition: 0.4s all ease-in-out;
+}
+.menuItems:hover {
+    opacity: 1;
+    /* text-decoration: underline; */
+    /* text-underline-offset: 0.15em; */
+    list-style-type: armenian;
+}
+.menuItems:nth-child(1){
+    opacity: 1;
+}
+@media screen and (max-width: 760px) {
+    .navbar {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /* align-items: center; */
+    }
+    .redSection {
+        width: 40vw;
+        margin-right: 1em;
+    }
+    .hero-content h1 {
+        font-size: 8em;
+        position: absolute;
+        top: 25%;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+    .rightScroller li {
+        font-size: 2em;
+    }
+    .rightDay {
+        margin-right: 1em;
+    }
+    .secondRedText {
+        padding-top: 0;
+        font-size: 2em;
+    }
+    .navbar h1 {
+        font-size: 3em;
+    }
+    .shower {
+        margin-top: 0;
+    }
+    .showerImage {
+        /* object-fit: cover; */
+        width: 550px;
+        height: 550px;
+        object-fit: cover;
+        object-position: 50%;
+    }
+    .paintBall {
+        display: none;
+    }
+    .menu {
+        display: none;
+    }
+    .day1 {
+        justify-content: space-between!important;
+    }
+    .leftTexts {
+        display: inherit;
+        position: inherit;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    position: absolute;
+    /* bottom: 0; */
+    top: 0;
+    margin-top: 1em;
+    margin-left: 1em;
+    padding-bottom: 0!important;
+    }
+    .leftText {
+        font-size: 3.5em;
+        /* width: 35vw;
+        max-width: 35vw; */
+    }
+    .leftDay {
+        width: 50vw;
+    }
+    .leftText2 {
+        font-size: 1em;
+    }
+    .daysContainer {
+        position: relative!important;
+        left: 0!important;
+    }
+    .daysContainer1, .daysContainer2, .daysContainer3, .daysContainer4 {
+        padding-top: 1em!important;
+        padding-bottom: 0!important;
+    }
+    #scrollRef {
+        display: none;
+    }
+    .daysContainer4 {
+        margin-bottom: 1em;
+    }
+}
+
+.items a{
+    text-decoration: none;
+    color: #fff;
+}
