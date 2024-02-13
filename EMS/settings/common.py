@@ -25,25 +25,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.humanize',
-
-    #libraries
-    'import_export',
-    'fontawesomefree',
-    'corsheaders',
-    'qr_code',
-    'django_user_agents',
-
-    
-    #user apps
-    'core.apps.CoreConfig',
-    'culturals.apps.CulturalsConfig',
     
 ]
 
