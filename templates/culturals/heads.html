@@ -16,7 +16,7 @@
 
 
 <div id="nav">
-        <img src="images/ojusreal.png" alt="">
+        <!-- <img src="images/ojusreal.png" alt=""> -->
         <center><h2>
             Event Management
         </h2></center>
@@ -557,6 +557,38 @@ ScrollReveal().reveal('#team', { delay: 500, origin: 'bottom' });
 </script>
 
 
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('section');
 
+        const navItems = document.querySelectorAll('#nav h2');
+        const navArray = Array.from(navItems);
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    const index = navArray.findIndex(navItem => navItem.textContent === entry.target.dataset.section);
+                    if (index !== -1) {
+                
+                        navArray.forEach((navItem, i) => {
+                            navItem.classList.toggle('active', i === index);
+                        });
+                    }
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
 
 {% endblock %}
