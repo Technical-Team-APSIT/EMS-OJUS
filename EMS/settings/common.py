@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'qr_code',
     'django_user_agents',
+
+    
     #user apps
     'core.apps.CoreConfig',
     'culturals.apps.CulturalsConfig',

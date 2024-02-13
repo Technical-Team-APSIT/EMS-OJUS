@@ -8,5 +8,5 @@ DEBUG= True
 
 ALLOWED_HOSTS = ['127.0.0.1' , 'localhost', 'ojus.eventsapsit.org', 'f094-114-79-150-80.ngrok-free.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://www.ojus.eventsapsit.org','http://www.ojus.eventsapsit.org', 'https://f094-114-79-150-80.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://ojus.eventsapsit.org','http://ojus.eventsapsit.org', 'https://f094-114-79-150-80.ngrok-free.app']
 
