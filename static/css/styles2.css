@@ -307,11 +307,11 @@ header a, a:visited {
 }
 .socials {
     position: absolute;
-    top: 30%;
+    top: 50%;
     right: 0;
+    transform: translateY(-50%);
     padding-right: 5px!important;
     padding: 18px;
-    margin-top: 20px;
     z-index: 5;
     background: #000000;
     border: #fff groove 2px;
@@ -319,10 +319,6 @@ header a, a:visited {
     transition: ease-in-out 0.3s;
 }
 
-.socials :hover{
-    scale: (1.5);
-    transition: ease-in-out 0.3s;
-}
 
 .socials a {
     display: block;
@@ -335,7 +331,7 @@ header a, a:visited {
 .socials :last-child{
     margin-bottom: 0;
 }
-.socials a:hover {
+.socials a:hover{
     color: #ffcc00;
     transform: scale(1.3);
     transition: ease-in-out 0.3s;
@@ -359,6 +355,49 @@ header a, a:visited {
     transition: ease-in-out 0.3s;
 }
 
+.ghanekar {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #2ba5f6, #69007f, #fc0987);
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 1.25em;
+  }
+  
+  .ghanekar span {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .ghanekar::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: #272727;
+    border-radius: 9px;
+    transition: 0.5s;
+  }
+  
+  .ghanekar:hover::before {
+    opacity: 0.7;
+  }
+  
+  /* add some glow effect */
+  .ghanekar::after {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    background: linear-gradient(45deg, #2ba5f6, #69007f, #fc0987);
+    border-radius: 9px;
+    transition: 0.5s;
+    opacity: 0;
+    filter: blur(20px);
+  }
+  
+  .ghanekar:hover:after {
+    opacity: 1;
+  }
 
 
 .about h3 {
@@ -376,15 +415,14 @@ header a, a:visited {
 }
 .about:hover {
     cursor: pointer;
-    /* color: red!important; */
 }
 #aboutOjus {
     display: none;
-    width: 15vw;
+    max-width: 20vw;
     position: absolute;
     top: 40%;
     left: 0;
-    margin-left: 40px;
+    margin-left: 80px;
     border: 1px solid white;
     color: #fff;
     font-weight: 100;
@@ -422,49 +460,125 @@ header a, a:visited {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0A212E;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-  }
+}
+    .wall{
+        background: url(https://res.cloudinary.com/ds2uw5gcw/image/upload/v1707652879/download_kx4ggi.jpg);
+        background-size: cover;
+      }
+
+      .scene{
+        display: inline-block;
+        vertical-align: middle;
+        perspective: 5px;
+        perspective-origin: 50% 50%;
+        position: relative;
+      }
+      
+      .wrap{
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        left: -500px;
+        top: -500px;
+        transform-style: preserve-3d;
+        animation: move 12s infinite linear;
+        animation-fill-mode: forwards;
+        
+      }
+      
+      .wrap:nth-child(2){
+        animation: move 12s infinite linear;
+        animation-delay: 6s;
+      }
+      
+      .wall {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        animation: fade 12s infinite linear;
+        animation-delay: 0;
+      }
+      
+      .wrap:nth-child(2) .wall {
+        animation-delay: 6s;
+      }
+      
+      .wall-right {
+        transform: rotateY(90deg) translateZ(500px);
+      }
+      
+      .wall-left {
+        transform: rotateY(-90deg) translateZ(500px);
+      }
+      
+      .wall-top {
+        transform: rotateX(90deg) translateZ(500px);
+      }
+      
+      .wall-bottom {
+        transform: rotateX(-90deg) translateZ(500px);
+      }
+      
+      .wall-back {
+        transform: rotateX(180deg) translateZ(500px);
+      }
+      
+      @keyframes move {
+        0%{
+          transform: translateZ(-500px) rotate(0deg);
+        }
+        100%{
+          transform: translateZ(500px) rotate(0deg);
+        }
+      }
+      
+      @keyframes fade {
+        0%{
+          opacity: 0;
+        }
+        25% {
+          opacity: 1;
+        }
+        75% {
+          opacity: 1;
+        }
+        100%{
+          opacity: 0;
+        }
+      }
+      
   
-  .waves {
-    position: relative;
-    top: 0;
-    background: rgba(255, 255, 255, .3);
-    left: 0;
-    width: 25px;
-    height: 25px;
-    margin-left: -12px;
-    margin-top: -12px;
-    border-radius: 50%;
-    -webkit-backface-visibility: hidden;
+  .left-bar{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      padding-left: -5px!important;
+      padding: 12px;
+      z-index: 5;
+      background: #000000;
+      border: #fff groove 2px;
+      border-radius: 0 40px 40px 0;
+      transition: ease-in-out 0.3s;
   }
-  
-  .waves:before,
-  .waves:after {
-    content: "";
-    position: absolute;
-    background: white;
-    margin-left: -12px;
-    margin-top: -12px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    -webkit-backface-visibility: hidden;
-    animation: wave-animate 2s infinite ease-out;
-  }
-  
-  @keyframes wave-animate {
-    0% {
-      transform: scale(0);
-      opacity: 1;
-      transform-origin: center;
-    }
-    100% {
-      transform: scale(3);
-      opacity: 0;
-      transform-origin: center;
-    }
-  }
+
+  .left-bar a {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 33.5px;
+    transition: ease-in-out 0.3s;
+}
+
+.left-bar a:hover{
+  color: #ffcc00;
+  transform: scale(1.3);
+  transition: ease-in-out 0.3s;
+}

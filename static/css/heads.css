@@ -2,13 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Romans Story', sans-serif;
     scroll-behavior: smooth;
 }
 
 
 #back-to-home {
-
+    font-family: "RomansStory";
     position: fixed;
     top: 10px;
     left: 10px;
@@ -19,6 +19,7 @@
     border-radius: 5px;
     display: flex;
     align-items: center;
+    z-index: 9999!important;
   }
 
   .takeline {
@@ -30,10 +31,13 @@
 
 
 #nav{
-    width:80%;
+    width:100%;
     position: sticky;
     top: 0;
-    background-color: black;
+    height: fit-content;
+    background:url(https://storage.googleapis.com/pai-images/100ed00db5b444c28022f9c3be48c628.jpeg);
+    background-position:calc(top+10%);
+    background-size: cover;
     z-index: 999;
 }
 #nav img{
@@ -63,11 +67,16 @@
 }
 
 body{
-    background-color: black;
+    /* background-color: black; */
+    background: url(https://storage.googleapis.com/pai-images/100ed00db5b444c28022f9c3be48c628.jpeg);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 5%;
+    background-attachment: fixed;
     width: 100%;
 }
 
@@ -103,9 +112,10 @@ body{
 }
 
 center h2{
+    background: transparent;
     font-family: 'RomansStory', sans-serif;
     font-weight: 400;
-    font-size: 100px!important;
+    font-size: 6em!important;
 }
 
 .team-box{
@@ -204,9 +214,13 @@ center h2{
     color: #000;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 760px){
+    #nav{
+        background-position: top;
+    }
+
     #nav center h2{
-        font-size: 1.8rem;
+        font-size: 1.8rem!important;
         align-items: center;
 
     }
