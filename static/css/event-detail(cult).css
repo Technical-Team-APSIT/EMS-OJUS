@@ -529,4 +529,8 @@ hr{
   .close-btn:hover {
     transform: scale(1.2);
   }
+
+#signupform p{
+    color: #fff
+  }
   

@@ -20,7 +20,10 @@
             </div>  
         </div>
         <div id="signupform" class="signup-closed">
+                  <button class="close-btn" onclick="toggleSignupForm()">X</button>
+
              <div class="form-title">Book a Seat</div>
+             <p> *In case of a Team event , only one member of the team is supposed to register </p>
           <form action="#" method='POST'>
           {% csrf_token %}
             <div class="input-box">
