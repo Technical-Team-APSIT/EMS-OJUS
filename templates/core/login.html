@@ -31,11 +31,7 @@
         <form method='POST'>
         {% csrf_token %}
             <h1>Log in </h1>
-            {% if messages %}
-            {% for msg in messages %}
-            {{msg}}
-            {% endfor %}
-            {% endif %}
+
             <div class="input-box">
                 <input type="text" id="moodle_id" name="moodle_id"  placeholder="Moodle ID" required >
             </div>
@@ -80,6 +76,9 @@
 
 
 });
+
+
+
 
 
 </script>

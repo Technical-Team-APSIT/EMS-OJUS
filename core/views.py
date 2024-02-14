@@ -41,6 +41,8 @@ def credits(request):
 
 
 
+
+
 def eventDetails(request,slug):
     user = request.user
     events = get_object_or_404(Event, slug=slug)
@@ -106,7 +108,8 @@ def loginUser(request):
 
         if authenticated_user is not None:
             login(request, authenticated_user)
-            return redirect('landing')
+            messages.success(request, f"You are now logged in as {user.fname}")
+            return redirect(request.META.get('HTTP_REFERER'))
         else:
             messages.error(request, 'Moodle id or password does not exist')
 
