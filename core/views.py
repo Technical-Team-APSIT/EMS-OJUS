@@ -120,7 +120,7 @@ def loginUser(request):
 @login_required(login_url='login')
 def logoutUser(request):
     logout(request)
-    return redirect('landing')
+    redirect(request.META.get('HTTP_REFERER'))
 
 
 def error(request):
