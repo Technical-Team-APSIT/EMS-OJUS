@@ -173,10 +173,11 @@ header a, a:visited {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 30vh;
     height: 5vh;
+    top: 45%!important;
+    left: 50%!important;
+    transform: translate(-50%, -45%)!important;
     position: absolute;
-    left: 31%;
 }
 
 .themeText h1{
