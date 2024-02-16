@@ -875,11 +875,6 @@ background: linear-gradient(to right, #240b36, #c31432);
 -moz-box-shadow: 10px 10px 26px 0px rgba(0,0,0,0.75);
 border: none;
 }
-    .aboutUsTexts span {
-        text-decoration: underline;
-        text-decoration-style: wavy;
-        text-decoration-color: red;
-    }
 .event-timer div{
     flex-basis: 100px;
 }
@@ -1197,6 +1192,9 @@ dotlottie-player {
     .event-timer {
         transform: scale(0.7);
         margin-top: 4.5vh;
+    }
+    .textsContainer{
+        transform: scale(0.7);
     }
 }
 .madeWithLove {

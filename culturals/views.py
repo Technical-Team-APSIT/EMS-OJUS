@@ -131,4 +131,7 @@ def regForm(request, slug):
     }
 
     return render(request, 'culturals/regForm.html', context)
+
+def team(request):
+    return render(request, 'culturals/team.html')
 # Create your views here.
