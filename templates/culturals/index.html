@@ -52,7 +52,7 @@
                 <div class="columnMenu">
                     <ul class="navigation">
                         <li class="navLinks"><a href="{% url 'cultural' %}">Home</a></li>
-                        <li class="navLinks"><a href="#">Events</a></li>
+                        <li class="navLinks"><a href="{% url 'events' %}">Events</a></li>
                         <li class="navLinks"><a href="{% url 'council' %}">Council</a></li>
                         <li class="navLinks"><a href="{% url 'heads' %}">Heads</a></li>
                         {% if user.is_authenticated %}
