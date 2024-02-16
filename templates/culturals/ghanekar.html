@@ -33,7 +33,10 @@
         </div>
         <div id="signupform" class="signup-closed">
           <button class="close-btn" onclick="toggleSignupForm()">X</button>
-          {% if signed %}
+          <div class="form-title">
+            COMING SOON
+          </div>
+          {% comment %} {% if signed %}
 
                   <div class="form-title">Scan this QR</div>
 
@@ -69,7 +72,9 @@
             <button class="signupbtn" type="submit">PROCEED</button>
           </form>
 
-          {%  endif %}
+          {%  endif %} {% endcomment %}
+
+          
         </div>
       </section>
       <section class="first">

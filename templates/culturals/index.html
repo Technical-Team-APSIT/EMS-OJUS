@@ -54,7 +54,12 @@
                         <li class="navLinks"><a href="#">Events</a></li>
                         <li class="navLinks"><a href="{% url 'council' %}">Council</a></li>
                         <li class="navLinks"><a href="{% url 'heads' %}">Heads</a></li>
+                        {% if user.is_authenticated %}
                         <li class="navLinks"><a class="ghanekar" href="{% url 'signup' %}"><span>Ghanekar</span></a></li>
+                        {% else %}
+                        <li class="navLinks"><a class="ghanekar" href="{% url 'login' %}"><span>Login</span></a></li>
+                        {% endif %}
+
                     </ul>
                     <h6 class="normalText">Radiance of Euphoria</h6>
                 </div>
@@ -199,7 +204,11 @@
                     <li><a href="{% url "heads" %}">Heads</a></li>
 
                     <li><a href="{% url 'events' %}">Events</a></li>
-                    <li><a class="ghanekar" href="{% url "signup" %}"><span>Signup</span></a></li>
+                     {% if user.is_authenticated %}
+                        <li class="navLinks"><a class="ghanekar" href="{% url 'signup' %}"><span>Ghanekar</span></a></li>
+                        {% else %}
+                        <li class="navLinks"><a class="ghanekar" href="{% url 'login' %}"><span>Login</span></a></li>
+                        {% endif %}
                 </ul>
             </div>
         </div>
