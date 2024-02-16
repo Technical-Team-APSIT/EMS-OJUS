@@ -92,7 +92,7 @@ def loginUser(request):
     page = 'login'
 
     if request.user.is_authenticated:
-        return redirect('landing')
+        return redirect('cultural')
 
     if request.method == 'POST':
         moodle_id = request.POST.get('moodle_id')
