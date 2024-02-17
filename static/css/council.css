@@ -129,7 +129,7 @@
     width: 7rem;
     height: 7rem;
   }
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 431px) {
     .first,
     .second {
       grid-template-columns: 1fr;
@@ -169,4 +169,20 @@
     border-radius: 5px;
     display: flex;
     align-items: center;
+  }
+
+  .madeWithLove {
+    background: #000;
+    min-height: fit-content!important;
+    color: #707070;
+    text-align: center;
+    padding-top:20px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 1em;
+  }
+  .madeWithLove h5 a {
+    text-decoration: none;
+    color: #fff;
   }

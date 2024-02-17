@@ -40,6 +40,7 @@ body {
     padding-left: 0.25em;
     position: fixed;
     z-index: 100;
+    top: 0;
 }
 .redSection {
     width: 20vw;
@@ -137,7 +138,7 @@ body {
     filter: brightness(0.5);
 }
 .daysContainer {
-    position: absolute;
+    /* position: absolute; */
     top: 95%;
     left: 4.5%;
     display: flex;

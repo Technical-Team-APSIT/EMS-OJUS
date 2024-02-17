@@ -211,6 +211,21 @@ center h2{
     color: #000;
 }
 
+.madeWithLove {
+    background: #000;
+    color: #707070;
+    text-align: center;
+    padding-top:20px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 10px;
+}
+.madeWithLove h5 a {
+    text-decoration: none;
+    color: #fff;
+}
+
 @media screen and (max-width: 760px){
     #nav{
         background-position: top;
@@ -230,6 +245,20 @@ center h2{
             height: 80px;
     padding-bottom: 20px;
     
+    }
+    .madeWithLove {
+        background: #000;
+        color: #707070;
+        text-align: center;
+        padding-top:20px;
+        padding-bottom: 20px;
+        font-weight: 400;
+        font-family:Verdana, Geneva, Tahoma, sans-serif ;
+        font-size: 10px;
+    }
+    .madeWithLove h5 a {
+        text-decoration: none;
+        color: #fff;
     }
 }
 
