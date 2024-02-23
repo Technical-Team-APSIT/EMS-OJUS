@@ -34,8 +34,8 @@ def scan(request):
     if request.method == 'POST':
         mood = request.POST.get('decodeResult')
         entry = GSigned.objects.get(moodle_id=mood)
-        if entry.scanned == False:
-            entry.scanned = True
+        if entry.scanned > 0:
+            entry.scanned -= 1
             entry.save()
             messages.success(request, "Entry Valid")
         else:
@@ -68,7 +68,6 @@ def ghanekar(request):
                 dept=user.dept,
                 year=user.year,
                 contact = request.POST.get('contact'),
-                scanned = False,
             )
             return redirect('signup')
             if not created:

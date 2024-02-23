@@ -8,7 +8,7 @@ class GSigned(models.Model):
     contact = models.BigIntegerField(null=True)
     dept = models.CharField(max_length=6, null=True)
     year = models.CharField(max_length=6, null=True)
-    scanned = models.BooleanField(default=False)
+    scanned = models.IntegerField(default=2)
 
 
 class Event(models.Model):
