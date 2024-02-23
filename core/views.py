@@ -96,7 +96,7 @@ def loginUser(request):
 
     if request.method == 'POST':
         moodle_id = request.POST.get('moodle_id')
-        password = request.POST.get('password')
+        password = request.POST.get('password').upper()
 
         try:
             user = User.objects.get(moodle_id=moodle_id)
