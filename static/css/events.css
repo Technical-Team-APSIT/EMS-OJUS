@@ -375,3 +375,10 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 .daysContainer4{
     min-width: max-content;
 }
+
+#ghanekar a{
+    background:linear-gradient(45deg, #2ba5f6, #69007f, #fc0987)!important;
+    -webkit-background-clip: text!important;
+    color: transparent!important;
+    text-decoration:none;
+}

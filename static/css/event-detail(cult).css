@@ -503,6 +503,7 @@ hr{
     height: 100%;
     background: transparent;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     transition: transform 0.5s ease;
     border-left: 1px solid white;
     overflow: hidden;
