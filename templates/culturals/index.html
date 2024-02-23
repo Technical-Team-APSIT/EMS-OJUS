@@ -68,8 +68,15 @@
         </div>
         <div class="container">
             <img src="https://res.cloudinary.com/ds2uw5gcw/image/upload/v1707329264/ojus_chronicles__ln97ak.png" alt="">
+            
             <h1 class="themeText">ChroniclEs <span>of</span><br> <span>the</span> Ages</h1>
+            {% if request.user.is_authenticated %}
+                        <h1 class="themeROE">WELCOME {{request.user.fname}} !</h1>
+
+            {% else %}
             <h1 class="themeROE">Radiance Of Euphoria</h1>
+
+            {% endif%}
             <div class="event-timer">
                 <div>
                     <p id="days">00</p>

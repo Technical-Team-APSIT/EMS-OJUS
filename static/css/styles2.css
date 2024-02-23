@@ -583,3 +583,11 @@ header a, a:visited {
   transform: scale(1.3);
   transition: ease-in-out 0.3s;
 }
+
+.themeROE {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
