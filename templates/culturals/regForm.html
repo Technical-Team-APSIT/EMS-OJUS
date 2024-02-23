@@ -16,7 +16,9 @@
         <div class="main-img">
             <img src="{{event.img.url}}" alt="">
             <div class="submit">
+            {% if event.fill %}
                 <button type="submit" class="btn"  onclick="toggleSignupForm()">Register</button>
+                {% endif %}
             </div>  
         </div>
         <div id="signupform" class="signup-closed">
