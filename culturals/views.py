@@ -48,6 +48,8 @@ def ghanekar(request):
     user = request.user
     signed = False
     existing_registration = GSigned.objects.filter(participant=user)
+    registrations_list = list(existing_registration.values())
+
     if existing_registration:
             signed = True
             
@@ -78,6 +80,7 @@ def ghanekar(request):
     context = {
         'user': user,
         'signed': signed,
+        'gsigned': registrations_list,
     }
 
     
@@ -104,6 +107,9 @@ def events(request):
 def regForm(request, slug):
     event = get_object_or_404(Event, slug=slug)
     user = request.user
+    already_filled = Signed.objects.filter(participant=user, event=event).exists()
+
+    
 
     if request.method == 'POST':
         if event.fill:
@@ -128,6 +134,7 @@ def regForm(request, slug):
     context = {
         'user': user,
         'event': event,
+        'filled': already_filled,
     }
 
     return render(request, 'culturals/regForm.html', context)
