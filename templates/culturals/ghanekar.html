@@ -33,12 +33,15 @@
         </div>
         <div id="signupform" class="signup-closed">
           <button class="close-btn" onclick="toggleSignupForm()">X</button>
-          <div class="form-title">
-            COMING SOON
-          </div>
-          {% comment %} {% if signed %}
 
-                  <div class="form-title">Scan this QR</div>
+          <div class="form-title"> COMING SOON</div>
+
+
+<!-- {% if signed %}
+
+                  <div class="form-title"> Hey, {{request.user.fname}} ! <br> SCAN THIS QR</div>
+
+
 
                       {% qr_from_text user.moodle_id size="L" %}
 
@@ -72,7 +75,7 @@
             <button class="signupbtn" type="submit">PROCEED</button>
           </form>
 
-          {%  endif %} {% endcomment %}
+          {%  endif %}  -->
 
           
         </div>
