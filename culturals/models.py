@@ -13,7 +13,7 @@ class GSigned(models.Model):
 
 class Event(models.Model):
     name = models.CharField(null=True, max_length=200)
-    desc = models.TextField(null=True, max_length= 200)
+    desc = models.TextField(null=True)
     venue = models.CharField(null=True, max_length= 200)
     date = models.DateField()
     time = models.TimeField()
