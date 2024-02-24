@@ -37,7 +37,7 @@ def scan(request):
         if entry.scanned > 0:
             entry.scanned -= 1
             entry.save()
-            messages.success(request, "Entry Valid")
+            messages.success(request, f"Entry Valid for {entry.pname}")
         else:
             messages.warning(request, "This code has already been scanned.")
     return render(request, 'culturals/scanner.html')
