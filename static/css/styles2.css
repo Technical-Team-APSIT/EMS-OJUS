@@ -183,7 +183,7 @@ header a, a:visited {
 .themeText h1{
     position: relative;
     font-family: "RomansStory",serif;
-    font-size: 3vw;
+    font-size: 3.5vw;
     overflow: hidden;
     font-weight: 400;
     background: linear-gradient(90deg, #000, #e8c371, #000);

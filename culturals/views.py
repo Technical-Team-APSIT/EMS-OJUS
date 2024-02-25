@@ -54,7 +54,6 @@ def ghanekar(request):
             signed = True
             
     total = GSigned.objects.count()
-    print(total)
 
     if request.method == 'POST':
        
