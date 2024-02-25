@@ -87,10 +87,10 @@ def ghanekar(request):
 
 def events(request):
     events = Event.objects.all()
-    day1 = Event.objects.filter(date=date(2024, 2, 26))
-    day2 = Event.objects.filter(date=date(2024, 2, 27))
-    day3 = Event.objects.filter(date=date(2024, 2, 28))
-    day4 = Event.objects.filter(date=date(2024, 2, 29))
+    day1 = Event.objects.filter(date=date(2024, 2, 26)).order_by('time')
+    day2 = Event.objects.filter(date=date(2024, 2, 27)).order_by('time')
+    day3 = Event.objects.filter(date=date(2024, 2, 28)).order_by('time')
+    day4 = Event.objects.filter(date=date(2024, 2, 29)).order_by('time')
 
     context = {
         'events': events,
