@@ -365,6 +365,9 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     .daysContainer4 {
         margin-bottom: 1em;
     }
+    .items a {
+        font-size: 2.5rem!important;
+    }
 }
 
 .items a{
@@ -388,4 +391,5 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     -webkit-background-clip: text!important;
     color: transparent!important;
     text-decoration:none;
+    font-weight: 800;
 }
