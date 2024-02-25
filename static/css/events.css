@@ -370,6 +370,12 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 .items a{
     text-decoration: none;
     color: #fff;
+    transition: color 0.5s ease-in;
+}
+
+.items a:hover{
+    color: #cf2d2d;
+    
 }
 
 .daysContainer4{
