@@ -125,7 +125,7 @@ def regForm(request, slug):
                     ename=event.name,
                     contact = request.POST.get('contact'),
                 )
-                return redirect('events')
+                return redirect(request.META.get('HTTP_REFERER'))
                 if not created:
                     messages.warning(request, f'You are already registered for the event.')
         
