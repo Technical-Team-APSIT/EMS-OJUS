@@ -333,7 +333,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 780px) {
     .navbar {
         width: 100%;
         display: flex;
@@ -430,7 +430,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         align-items: center;
         flex-direction: column;
         justify-content: space-around;
-        width: 300px;
+        width: 100%;
     }
     
     .mouse {
@@ -440,7 +440,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 60px;
         position: absolute;
         z-index: 1100;
-        transform: translateY(-350%);
+        transform: translateY(-320%);
         &::before {
             content: '';
             width: 12px;
