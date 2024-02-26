@@ -112,7 +112,7 @@ def regForm(request, slug):
     if request.method == 'POST':
         if event.fill:
             # Check if the user is already registered for any event of that type
-                existing_registration = Signed.objects.filter(participant=user)
+                existing_registration = Signed.objects.filter(participant=user, event=event)
                 if existing_registration:
                     return redirect(request.META.get('HTTP_REFERER'))
 
