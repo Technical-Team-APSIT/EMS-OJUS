@@ -17,7 +17,12 @@
             <img src="{{event.img.url}}" alt="">
             <div class="submit">
             {% if event.fill %}
+            {% if filled %}
+                <button type="submit" class="btn"  onclick="toggleSignupForm()">Registered Successfully!</button>
+                {% else %}
                 <button type="submit" class="btn"  onclick="toggleSignupForm()">Register</button>
+
+                {% endif %}
                 {% endif %}
             </div>  
         </div>
