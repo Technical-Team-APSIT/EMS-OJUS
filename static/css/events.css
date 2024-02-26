@@ -276,6 +276,63 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 .menuItems:nth-child(1){
     opacity: 1;
 }
+
+
+.field {
+	display: flex;
+	align-items: center;
+    flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.mouse {
+	width: 75px;
+	height: 135px;
+	border: 3px solid #fafafa;
+	border-radius: 60px;
+	position: absolute;
+    z-index: 1100;
+    transform: translateY(-380%);
+	&::before {
+		content: '';
+		width: 22px;
+		height: 22px;
+		position: absolute;
+		top: 5px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #fafafa;
+		border-radius: 50%;
+		opacity: 1;
+		animation: wheel 2s infinite;
+		-webkit-animation: wheel 2s infinite;
+	}
+}
+
+@keyframes wheel {
+    from {
+      opacity: 0;
+      top: 80px;
+    }
+    to {
+      opacity: 1;
+      top: 10px;
+    }
+  }
+  
+  @-webkit-keyframes wheel {
+    from {
+      opacity: 0;
+      top: 80px;
+    }
+    to {
+      opacity: 1;
+      top: 10px;
+    }
+  }
+
+
 @media screen and (max-width: 760px) {
     .navbar {
         width: 100%;
@@ -368,6 +425,38 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     .items a {
         font-size: 2.5rem!important;
     }
+    .field {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 300px;
+    }
+    
+    .mouse {
+        width: 50px;
+        height: 90px;
+        border: 3px solid #fafafa;
+        border-radius: 60px;
+        position: absolute;
+        z-index: 1100;
+        transform: translateY(-350%);
+        &::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fafafa;
+            border-radius: 50%;
+            opacity: 1;
+            animation: wheel 2s infinite;
+            -webkit-animation: wheel 2s infinite;
+        }
+    }
+    
 }
 
 .items a{
@@ -392,4 +481,19 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     color: transparent!important;
     text-decoration:none;
     font-weight: 800;
+}
+
+@media screen and (max-width: 340px){
+    .items a{
+        font-size: 2rem!important;
+    }
+
+    .leftTexts{
+        transform: scale(0.8);
+    }
+
+    .hero-content h1{
+
+        font-size: 5em;
+    }
 }
