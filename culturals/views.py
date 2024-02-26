@@ -112,9 +112,9 @@ def regForm(request, slug):
     if request.method == 'POST':
         if event.fill:
             # Check if the user is already registered for any event of that type
-                existing_registration = Signed.objects.filter(participant=user)
+                existing_registration = Signed.objects.filter(participant=user, event=event)
                 if existing_registration:
-                    return redirect('events')
+                    return redirect(request.META.get('HTTP_REFERER'))
 
                 signed_obj, created = Signed.objects.get_or_create(
                     participant=user,
@@ -125,7 +125,7 @@ def regForm(request, slug):
                     ename=event.name,
                     contact = request.POST.get('contact'),
                 )
-                return redirect('events')
+                return redirect(request.META.get('HTTP_REFERER'))
                 if not created:
                     messages.warning(request, f'You are already registered for the event.')
         
