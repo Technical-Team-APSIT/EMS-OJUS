@@ -58,7 +58,7 @@ def ghanekar(request):
     if request.method == 'POST':
        
             # Check if the user is already registered for any event of that type
-        if total <= 1250:
+        if total <= 800:
 
             signed_obj, created = GSigned.objects.get_or_create(
                 participant=user,
