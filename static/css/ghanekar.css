@@ -73,7 +73,15 @@
   .bookaseat:hover a {
     color: #001F3F;
   }
-  
+  .notice{
+      width:100%;
+      margin-top:3vh;
+      h2{
+          font-size:1rem;
+          text-align:center;
+      }
+  }
+
   #signupform form {
     margin-top: 2rem;
     min-height: fit-content;
@@ -308,6 +316,15 @@
       transform: scale(1.2);
       width: 50vw;
     }
+
+      .notice{
+      width:100%;
+      margin-top:3vh;
+      h2{
+          font-size:0.8rem;
+          text-align:center;
+      }
+      }
   
     .madeWithLove {
       background: #000;
@@ -414,6 +431,15 @@
   .ghanekar:hover:after {
     opacity: 1;
   }
+
+.notice{
+      width:100%;
+      margin-top:2vh;
+      h2{
+          font-size:0.8rem;
+          text-align:center;
+      }
+}
 
 
   #back-to-home {
